@@ -1,0 +1,16 @@
+select end_descricao from tb_endereco;
+
+select bai_descricao from tb_bairro;
+
+select cid_descricao from tb_cidade;
+
+select cli_codigo, cli_nome, cli_rg, cli_cpf from tb_cliente;
+
+select fun_nome as nome from tb_funcionario order fun_nome by asc;
+
+select pro_descricao from tb_produto order by pro_descricao asc;
+
+select pro_dezcricao from tb_produto order by pro_preco asc;
+
+------------------------------------------------
+j) select 

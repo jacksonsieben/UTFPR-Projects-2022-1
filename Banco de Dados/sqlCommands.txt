@@ -1,0 +1,24 @@
+sysdate -- data atual;
+
+SQL COMMANDS 
+
+select sysdate + 15 from dual; //tras a data atual mais 15 dias
+
+select sysdate - emp_data from tb_emprestimo; // tras os dias de livros atrasados de livros
+select trunc (sysdate - emp_data) from tb_emprestimo; // tras os dias sem a virgular de
+
+select exepre_valormulta from tb_exemplaremprestimo; // todos os valores de multa
+
+select expre_valormulta, exepre_codemprestimo  from tb_exemplaremprestimo; // valor da multa com o cod tb_emprestimo
+
+select expre_valormulta * 1.2 from tb_exemplaremprestimo; // tras valor da multa com acrescimo de 20%
+
+select expre_valormulta * 1.1 as valor_multa_adicional, exepre_valormulta * 0.8 as valor_multa_desconto from tb_exemplaremprestimo;
+
+select 'Para o cargo ' || car_descricao || ' o salario base é R$' || car_salariobase from tb_cargo;
+select 'Para o cargo ' || car_descricao || ' o salario base é R$' || car_salariobase as descricao from tb_cargo;
+
+select distinct exepre_codexemplar from tb_exemplaremprestimo;
+
+@ "C:\\temp\Script criacao de banco de dados vendas.txt";
+
