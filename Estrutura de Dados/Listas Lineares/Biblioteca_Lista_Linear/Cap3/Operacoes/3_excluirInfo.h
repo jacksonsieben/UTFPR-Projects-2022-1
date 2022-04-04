@@ -8,7 +8,7 @@ int excluirInfo(pDLista pd, void *info, FuncaoComparacao pfc){
     atual = pd->primeiro;
     ant   = NULL;
 
-    /* encontra a informação na lista */
+    /* encontra a informaï¿½ï¿½o na lista */
     while(atual != NULL){
        if (pfc(atual->info, info) == 0)
           break;
@@ -21,6 +21,10 @@ int excluirInfo(pDLista pd, void *info, FuncaoComparacao pfc){
         /* eh o primeiro da lista */
         if (atual == pd->primeiro)
             pd->primeiro = atual->prox;
+            //alterei para a ideia de uma lista com 1 nÃ³
+            if(pd->quantidade == 1){
+                pd->ultimo = atual -> prox;
+            }
         else
         /* eh o ultimo da lista */
         if (atual == pd->ultimo){

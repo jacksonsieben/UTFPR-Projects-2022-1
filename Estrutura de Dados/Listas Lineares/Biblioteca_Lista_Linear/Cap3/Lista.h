@@ -5,6 +5,8 @@
 #include "Operacoes/1_criarLista.h"
 
 #include "Operacoes/2_incluirInfo.h"
+#include "Operacoes/2_1_incluirInfoInicio.h"
+#include "Operacoes/2_2_incluirInfoMeio.h"
 
 #include "Operacoes/3_excluirInfo.h"
 #include "Operacoes/3_1_excluirInfoPos.h"

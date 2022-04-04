@@ -10,7 +10,7 @@ typedef Noh*        pNoh;
 typedef struct dLista  DLista;
 typedef DLista*        pDLista;
 
-/* 3 tipos que representam ponteiros para função */
+/* 3 tipos que representam ponteiros para funï¿½ï¿½o */
 typedef int   (*FuncaoComparacao)(void *, void *);
 typedef void  (*FuncaoImpressao) (void *);
 typedef void* (*FuncaoAlocacao)  (void *);
@@ -20,6 +20,8 @@ typedef void* (*FuncaoAlocacao)  (void *);
 /*------------------------------------------*/
 pDLista  criarLista    ();
 void     incluirInfo   (pDLista, void *);
+void incluirInfoInicio (pDLista, void *);
+void incluirInfoMeio   (pDLista, void *, int);
 int      excluirInfo   (pDLista, void *, FuncaoComparacao);
 int      contemInfo    (pDLista, void *, FuncaoComparacao);
 void     imprimirLista (pDLista, FuncaoImpressao);
