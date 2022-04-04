@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "Utils.h"
 #include "Lista.h"
 
@@ -19,9 +20,17 @@ int main(){
     printf("\nResultado da exclusao \n");
     imprimirLista(pListaInt, imprimeInt);
 
+    incluirInfoInicio(pListaInt, alocaInt(10));
+    printf("\nResultado da inclusao inicio \n");
+    imprimirLista(pListaInt, imprimeInt);
+
+    incluirInfoMeio(pListaInt, alocaInt(31),3);
+    printf("\nResultado da inclusao meio 3 \n");
+    imprimirLista(pListaInt, imprimeInt);
+
     /* teste de busca */
     int result = contemInfo(pListaInt, alocaInt(5), comparaInt);
-    printf("\nResultado da busca do número 5: 0-[Nao encontrou], 1-[ok] -> %d\n", result);
+    printf("\nResultado da busca do nï¿½mero 5: 0-[Nao encontrou], 1-[ok] -> %d\n", result);
 
     /* teste de duplicacao de lista */
     pDLista copia = duplicarLista(pListaInt, alocaInfoInt);

@@ -10,6 +10,7 @@
 
 #include "Operacoes/3_excluirInfo.h"
 #include "Operacoes/3_1_excluirInfoPos.h"
+#include "Operacoes/3_2_excluirInfoFuncLib.h"
 
 #include "Operacoes/4_contemInfo.h"
 

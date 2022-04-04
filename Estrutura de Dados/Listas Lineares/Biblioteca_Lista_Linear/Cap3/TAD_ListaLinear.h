@@ -14,6 +14,7 @@ typedef DLista*        pDLista;
 typedef int   (*FuncaoComparacao)(void *, void *);
 typedef void  (*FuncaoImpressao) (void *);
 typedef void* (*FuncaoAlocacao)  (void *);
+typedef void  (*FuncaoLiberacao) (void *);
 
 /*------------------------------------------*/
 /* operacoes                                */
@@ -23,6 +24,7 @@ void     incluirInfo   (pDLista, void *);
 void incluirInfoInicio (pDLista, void *);
 void incluirInfoMeio   (pDLista, void *, int);
 int      excluirInfo   (pDLista, void *, FuncaoComparacao);
+int excluirInfoFuncLib (pDLista, void *, FuncaoComparacao, FuncaoLiberacao);
 int      contemInfo    (pDLista, void *, FuncaoComparacao);
 void     imprimirLista (pDLista, FuncaoImpressao);
 void     destruirLista (pDLista);

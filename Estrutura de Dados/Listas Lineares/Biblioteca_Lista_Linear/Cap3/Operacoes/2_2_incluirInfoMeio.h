@@ -1,17 +1,11 @@
 #ifndef INCLUIR_INFO_MEIO_H
 #define INCLUIR_INFO_MEIO_H
 
-void incluirInfoMeio(pDlista pd, void *info, int local){
+void incluirInfoMeio(pDLista pd, void *info, int local){
     if (pd == NULL){
         printf("Lista nao existe ainda, nao eh possivel incluir!");
         return;
     }
-
-    //pNoh pNovo = malloc(sizeof(Noh));
-
-    //pNovo->info = info;
-    
-    //pd->quantidade++;
 
     if(local==1){
         incluirInfoInicio(pd, info);
@@ -31,12 +25,21 @@ void incluirInfoMeio(pDlista pd, void *info, int local){
             }
             ant = atual;
             atual = atual->prox;
+            cont++;
         }
 
         if(atual != NULL){
+            pNoh pNovo = malloc(sizeof(Noh));
+
+            pNovo->info = info;
+            
             pNovo->prox = atual;
-            ant->prox = pNovo
+            ant->prox = pNovo;
+            
+            pd->quantidade++;
         }
     }
 
 }
+
+#endif
