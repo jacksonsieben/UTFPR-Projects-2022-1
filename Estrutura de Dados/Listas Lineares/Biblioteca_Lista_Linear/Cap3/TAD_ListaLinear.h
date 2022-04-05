@@ -19,7 +19,7 @@ typedef void  (*FuncaoLiberacao) (void *);
 /*------------------------------------------*/
 /* operacoes                                */
 /*------------------------------------------*/
-pDLista  criarLista    ();
+pDLista  criarListaj    ();
 void     incluirInfo   (pDLista, void *);
 void incluirInfoInicio (pDLista, void *);
 void incluirInfoMeio   (pDLista, void *, int);
