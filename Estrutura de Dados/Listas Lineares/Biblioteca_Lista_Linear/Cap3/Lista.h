@@ -33,3 +33,7 @@
 #include "Operacoes/12_disjuncaoLista.h"
 
 #include "Operacoes/13_contidaNaLista.h"
+
+#include "Operacoes/14_inverterLista.h"
+
+#include "Operacoes/15_imprimirListaRecursiva.h"

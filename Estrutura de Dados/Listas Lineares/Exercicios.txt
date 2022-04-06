@@ -5,4 +5,7 @@ Exercicio 4 - feito porem ver se esta correto, 6_1_destruirListaFuncLib
 Exercicio 5 - feito e testado, 8_1_dividirListaVal
 Exercicio 6 - feito e testado, 10_unirLista
 Exercicio 7 - feito e testado, 11_intersecaoLista
-Exercicio 8 - feito e testado, 12_contidaNaLista
+Exercicio 8 - feito e testado, 12_disjuncaoLista
+Exercicio 9 - feito e testado, 13_contidaNaLista
+Exercicio 10 - feito e testado, 13_inverterLista
+Exercicio 11 - feito e testado, 14_imprimirListaRecursiva

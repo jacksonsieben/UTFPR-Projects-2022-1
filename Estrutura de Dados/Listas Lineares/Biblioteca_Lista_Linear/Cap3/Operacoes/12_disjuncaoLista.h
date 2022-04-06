@@ -1,7 +1,7 @@
 #ifndef DISJUNCAO_LISTA_H
 #define DISJUNCAO_LISTA_H
 
-pDLista disjuncaoLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
+int disjuncaoLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
     
     pNoh atual, pnl2;
 
