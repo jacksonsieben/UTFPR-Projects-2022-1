@@ -8,34 +8,29 @@ int excluirInfoFuncLib(pDLista pd, void *info, FuncaoComparacao pfc, FuncaoLiber
     atual = pd->primeiro;
     ant   = NULL;
 
-    /* encontra a informa��o na lista */
     while(atual != NULL){
        if (pfc(atual->info, info) == 0)
           break;
        ant   = atual;
        atual = atual->prox;
     }
-
-    /* verifica se a info existe na lista */
+    
     if (atual != NULL){
-        /* eh o primeiro da lista */
         if (atual == pd->primeiro)
             pd->primeiro = atual->prox;
             //alterei para a ideia de uma lista com 1 nó
             if(pd->quantidade == 1){
                 pd->ultimo = atual -> prox;
             }
-        else
-        /* eh o ultimo da lista */
-        if (atual == pd->ultimo){
+        else if (atual == pd->ultimo){
             pd->ultimo = ant;
             ant->prox  = NULL;
-        } else
-             /* estah no meio da lista */
+        }else
              ant->prox = atual->prox;
 
         pd->quantidade--;
-        pfl(atual);
+        pfl(atual->info); // isso esta correto??
+        //pfl(atual); // ou isso resolve?
         return 1;
     }
 

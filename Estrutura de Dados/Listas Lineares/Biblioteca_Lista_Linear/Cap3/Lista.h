@@ -17,9 +17,19 @@
 #include "Operacoes/5_imprimirLista.h"
 
 #include "Operacoes/6_destruirLista.h"
+#include "Operacoes/6_1_destruirListaFuncLib.h"
 
 #include "Operacoes/7_duplicarLista.h"
 
 #include "Operacoes/8_dividirLista.h"
+#include "Operacoes/8_1_dividirListaVal.h"
 
 #include "Operacoes/9_buscarNohInfo.h"
+
+#include "Operacoes/10_unirLista.h"
+
+#include "Operacoes/11_intersecaoLista.h"
+
+#include "Operacoes/12_disjuncaoLista.h"
+
+#include "Operacoes/13_contidaNaLista.h"

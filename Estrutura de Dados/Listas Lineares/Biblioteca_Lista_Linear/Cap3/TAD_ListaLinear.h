@@ -19,7 +19,7 @@ typedef void  (*FuncaoLiberacao) (void *);
 /*------------------------------------------*/
 /* operacoes                                */
 /*------------------------------------------*/
-pDLista  criarListaj    ();
+pDLista  criarLista    ();
 void     incluirInfo   (pDLista, void *);
 void incluirInfoInicio (pDLista, void *);
 void incluirInfoMeio   (pDLista, void *, int);
@@ -28,10 +28,16 @@ int excluirInfoFuncLib (pDLista, void *, FuncaoComparacao, FuncaoLiberacao);
 int      contemInfo    (pDLista, void *, FuncaoComparacao);
 void     imprimirLista (pDLista, FuncaoImpressao);
 void     destruirLista (pDLista);
+void   destruirListaFL (pDLista, FuncaoLiberacao);
 pDLista  duplicarLista (pDLista, FuncaoAlocacao);
 /* o parametro int estabelece a posicao da lista onde a divisao deve acontecer */
 pDLista  dividirLista  (pDLista, int);
+pDLista  dividirListaValor  (pDLista, FuncaoComparacao, void *);
 void*    buscarNohInfo (pDLista, void*, FuncaoComparacao);
+pDLista  unirLista     (pDLista, pDLista, FuncaoComparacao, FuncaoAlocacao);
+pDLista intersecaoLista (pDLista, pDLista, FuncaoComparacao);
+pDLista  disjuncaoLista (pDLista, pDLista, FuncaoComparacao);
+pDLista  contidaNaLista (pDLista, pDLista, FuncaoComparacao);
 
 #endif
 
