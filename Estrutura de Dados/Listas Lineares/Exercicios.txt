@@ -1,11 +1,11 @@
-Exercicio 1 - nao esta feito, perguntar ao evando como fazer como fazer
-Exercicio 2 - feito e testado, 2_1_incluirInfoInicio e 2_2_incluirInfoMeio
-Exercicio 3 - feito porem ver se esta correto, 3_2_excluirInfoFuncLib
-Exercicio 4 - feito porem ver se esta correto, 6_1_destruirListaFuncLib
-Exercicio 5 - feito e testado, 8_1_dividirListaVal
-Exercicio 6 - feito e testado, 10_unirLista
-Exercicio 7 - feito e testado, 11_intersecaoLista
-Exercicio 8 - feito e testado, 12_disjuncaoLista
-Exercicio 9 - feito e testado, 13_contidaNaLista
+Exercicio 01 - ao não usar o TAD o parametro DLista a ser passado será uma cópia e não o mesmo DLista original
+Exercicio 02 - feito e testado, 2_1_incluirInfoInicio e 2_2_incluirInfoMeio
+Exercicio 03 - feito e testado, 3_2_excluirInfoFuncLib
+Exercicio 04 - feito e testado, 6_1_destruirListaFuncLib
+Exercicio 05 - feito e testado, 8_1_dividirListaVal
+Exercicio 06 - feito e testado, 10_unirLista
+Exercicio 07 - feito e testado, 11_intersecaoLista
+Exercicio 08 - feito e testado, 12_disjuncaoLista
+Exercicio 09 - feito e testado, 13_contidaNaLista
 Exercicio 10 - feito e testado, 13_inverterLista
 Exercicio 11 - feito e testado, 14_imprimirListaRecursiva
