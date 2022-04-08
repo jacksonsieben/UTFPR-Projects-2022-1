@@ -1,0 +1,79 @@
+cap 5
+ex1
+select
+  cli_nome,
+  end_descricao,
+  cid_descricao,
+  bai_descricao,
+  cli_numero
+from
+  tb_cliente,
+  tb_endereco,
+  tb_cidade,
+  tb_bairro
+where
+  cli_codendereco = end_codigo
+ and
+  cli_codcidade = cid_codigo
+ and
+  cli_codbairro = bai_codigo
+ and
+  cid_descricao = 'Capanema'
+
+ex2
+select
+  exepre_codemprestimo
+  sum(exepre_valormulta)
+from
+  tb_exemplaremprestimo
+having
+  sum(exepre_valormulta) > 0
+group by
+  exepre_codemprestimo;
+
+ex3
+select
+  autliv_codautor,
+  liv_titulo,
+  aut_nome
+from
+  tb_autorlivro,
+  tb_livro,
+  tb_autor
+where
+  autliv_codautor = aut_codigo
+ and
+  autliv_codlivro = liv_codigo
+ and
+  liv_codigo = 5
+
+ex4
+select
+  cli_nome,
+  count(res_codigo) // ou count(*)
+from
+  tb_reserva,
+  tb_cliente
+where
+  cli_codigo = res_codcliente
+group by
+   cli_nome
+
+ex5
+select
+  cli_nome,
+  count(*) as quantidade
+from
+  tb_emprestimo,
+  tb_cliente,
+  tb_exemplaremprestimo
+where
+  cli_codigo = emp_codcliente
+ and
+  emp_codigo = exepre_codemprestimo
+group by
+   cli_nome
+
+
+ex6
+	
