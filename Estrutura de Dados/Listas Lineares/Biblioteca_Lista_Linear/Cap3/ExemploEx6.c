@@ -68,4 +68,13 @@ void main(){
         printf("\nListas intersecao nao contem na lista 1");
     }
 
+    printf("\nLista 1\n");
+    imprimirLista(pLista1, imprimeInt);
+
+    inverterLista(pLista1, alocaInfoInt);
+    printf("\nLista 1 Invertida\n");
+    imprimirLista(pLista1, imprimeInt);
+
+    printf("\nLista 1 recursiva\n");
+    imprimirListaRecursiva(pLista1, imprimeInt);
 }

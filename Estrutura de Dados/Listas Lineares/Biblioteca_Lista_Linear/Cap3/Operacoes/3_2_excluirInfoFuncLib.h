@@ -29,8 +29,8 @@ int excluirInfoFuncLib(pDLista pd, void *info, FuncaoComparacao pfc, FuncaoLiber
              ant->prox = atual->prox;
 
         pd->quantidade--;
-        pfl(atual->info); // isso esta correto??
-        //pfl(atual); // ou isso resolve?
+        pfl(atual->info);
+        free(atual); 
         return 1;
     }
 

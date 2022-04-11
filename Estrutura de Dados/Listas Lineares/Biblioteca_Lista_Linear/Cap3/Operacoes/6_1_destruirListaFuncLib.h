@@ -5,9 +5,9 @@ void destruirListaRecursivaFL(pNoh atual, FuncaoLiberacao pflr){
     if (atual == NULL)
         return;
     destruirListaRecursivaFL(atual->prox, pflr);
-    //free(atual);
-    //fcr(atual);
+
     pflr(atual->info);
+    free(atual);
 }
 
 void destruirListaFL(pDLista pd, FuncaoLiberacao pfl){

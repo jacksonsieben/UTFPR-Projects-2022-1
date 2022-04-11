@@ -1,7 +1,7 @@
 #ifndef CONTIDA_NA_LISTA_H
 #define CONTIDA_NA_LISTA_H
 
-pDLista contidaNaLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
+int contidaNaLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
     
     pNoh atual, pnl2;
 
