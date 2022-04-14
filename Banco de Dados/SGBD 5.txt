@@ -20,6 +20,8 @@ where
  and
   cid_descricao = 'Capanema'
 
+===========================================================
+
 ex2
 select
   exepre_codemprestimo
@@ -30,6 +32,8 @@ having
   sum(exepre_valormulta) > 0
 group by
   exepre_codemprestimo;
+
+============================================================
 
 ex3
 select
@@ -47,6 +51,8 @@ where
  and
   liv_codigo = 5
 
+===========================================================
+
 ex4
 select
   cli_nome,
@@ -58,6 +64,8 @@ where
   cli_codigo = res_codcliente
 group by
    cli_nome
+
+============================================================
 
 ex5
 select
@@ -74,6 +82,218 @@ where
 group by
    cli_nome
 
-
+============================================================
 ex6
+
+select
+  fun_nome,
+  car_descricao,
+  to_char(car_salariobase, 'L99,999.00')
+from
+  tb_funcionario,
+  tb_cargo
+where
+  fun_codcargo = car_codigo
+
+================================================================
+ex7
+
+select
+  liv_titulo,
+  cat_descricao as categoria,
+  edi_nome as editora,
+  liv_edicao,
+  liv_ano
+from
+  tb_livro,
+  tb_categoria,
+  tb_editora
+where
+  liv_codcategoria = cat_codigo
+ and
+  liv_codeditora = edi_codigo
+ and
+  liv_codigo = 4;
+
+==================================================================
+ex8
+
+select
+  cli_nome
+from
+  tb_cliente,
+  tb_bairro,
+  tb_cidade,
+  tb_emprestimo
+where
+  cli_codcidade = cid_codigo
+ and
+  cli_codbairro = bai_codigo
+ and
+  cli_codigo = emp_codcliente
+ and
+  upper(cid_descricao) = 'MEDIANEIRA'
+ and
+  upper(bai_descricao) = 'CENTRO'
+
+==================================================================
+ex9
+
+select
+	res_codigo,
+	res_data,
+	liv_titulo,
+	cat_descricao as categoria
+from
+	tb_reserva,
+	tb_livro,
+	tb_categoria
+where
+	res_codlivro = liv_codigo
+	and
+	liv_codcategoria = cat_codigo
+	and
+	upper(cat_descricao) = 'INFORMÁTICA'
+
+================================================================
+ex10
+
+select
+  liv_titulo
+from
+  tb_livro,
+  tb_editora
+where
+  liv_codeditora = edi_codigo
+ and
+  upper(edi_nome) = 'SARAIVA';
+
+=================================================================
+ex11
+
+select
+  cli_nome,
+  emp_data
+from
+  tb_cliente,
+  tb_funcionario,
+  tb_emprestimo
+where
+  cli_codigo = emp_codcliente
+ and
+  fun_codigo = emp_codfuncionario
+ and
+  upper(fun_nome) = 'CARLOS PEREIRA'
+ and
+  emp_data between '01/09/2009' and '31/08/2009'
+
+=================================================================
+ex12
+
+select
+  liv_titulo
+from
+  tb_livro,
+  tb_emprestimo,
+  tb_exemplar,
+  tb_exemplaremprestimo,
+  tb_funcionario
+where
+  liv_codigo = exe_codlivro
+ and
+  exe_codigo = exepre_codexemplar
+and
+  exepre_codemprestimo = emp_codigo
+and
+  fun_codigo = emp_codfuncionario
+ and
+ upper(fun_nome) = 'CARLOS PEREIRA'
+
+==================================================================
+ex13
+
+select
+  to_char(res_data, 'YYYYMM'),
+  count(*) as quantidade
+from
+  tb_reserva,
+  tb_funcionario
+where
+  res_codfunc = fun_codigo
+ and
+  upper(fun_nome) = 'CARLOS PEREIRA'
+group by
+  to_char(res_data, 'YYYYMM');
+
+=================================================================
+ex14
+
+select
+  liv_titulo
+from
+ tb_livro,
+  tb_autorlivro
+where
+  liv_codigo = autliv_codlivro
+having
+  count(*) > 1
+group by
+  liv_titulo
+
+==================================================================
+
+ex15
+
+select
+  liv_titulo
+from
+  tb_livro,
+  tb_exemplar
+where
+  liv_codigo = exe_codlivro
+having
+  count(*) > 5
+group by
+  liv_titulo
+
+==================================================================
+ex16
+
+select
+  liv_titulo
+from
+  tb_livro,
+  tb_reserva,
+  tb_cliente,
+  tb_emprestimo
+where
+  liv_codigo = res_codlivro
+ and
+  cli_codigo = res_codcliente
+ and
+  cli_codigo = emp_codcliente
+ and
+  upper(cli_nome) = 'JOSIMERI CALGARO JUVENAL'
+
+=================================================================
+ex17
+
+select
+  liv_titulo
+from
+  tb_livro,
+  tb_reserva,
+  tb_cliente,
+  tb_emprestimo
+where
+  liv_codigo = res_codlivro
+ and
+  cli_codigo = res_codcliente
+ and
+  cli_codigo = emp_codcliente
+ and
+  upper(cli_nome) = 'JOSIMERI CALGARO JUVENAL'
+
+
+
 	
