@@ -1,3 +1,6 @@
+#ifndef EXCLUIR_INFO_POS_H
+#define EXCLUIR_INFO_POS_H
+
 void* excluirInfoPos(pDLista pd, int pos){
 
     int cont=1;
@@ -28,6 +31,12 @@ void* excluirInfoPos(pDLista pd, int pos){
              /* estah no meio da lista */
              ant->prox = atual->prox;
 
+        /* se tinha somente uma info na lista, zera os campos primeiro e ultimo */
+        if (pd->quantidade == 1){
+            pd->primeiro = NULL;
+            pd->ultimo   = NULL;
+        }
+
         pd->quantidade--;
         void * auxInfo = atual->info;
         free(atual);
@@ -36,3 +45,5 @@ void* excluirInfoPos(pDLista pd, int pos){
 
     return NULL;
 }
+
+#endif // EXCLUIR_INFO_POS_H

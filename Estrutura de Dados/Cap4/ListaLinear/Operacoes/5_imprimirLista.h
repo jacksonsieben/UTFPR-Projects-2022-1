@@ -1,3 +1,6 @@
+#ifndef IMPRIMIR_LISTA_H
+#define IMPRIMIR_LISTA_H
+
 void imprimirLista(pDLista pd, FuncaoImpressao pfi){
 
     pNoh aux;
@@ -10,3 +13,5 @@ void imprimirLista(pDLista pd, FuncaoImpressao pfi){
        aux = aux->prox;
     }
 }
+
+#endif

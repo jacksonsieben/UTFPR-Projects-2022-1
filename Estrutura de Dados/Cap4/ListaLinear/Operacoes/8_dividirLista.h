@@ -1,3 +1,6 @@
+#ifndef DIVIDIR_LISTA_H
+#define DIVIDIR_LISTA_H
+
 pDLista dividirLista(pDLista pListaOriginal, int pos)
 {
     /* cria a nova lista para guardar parte do nohs da lista original */
@@ -29,3 +32,5 @@ pDLista dividirLista(pDLista pListaOriginal, int pos)
 
     return pNovaLista;
 }
+
+#endif

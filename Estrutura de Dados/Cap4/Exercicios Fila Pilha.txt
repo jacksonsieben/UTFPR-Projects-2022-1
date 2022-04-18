@@ -7,4 +7,4 @@
 7- checar a quantidade de parenteses dentro de um vetor de parenteses exemplo: [(,)(,(,)] e verificar se sao a quantidade de abrir e fechar sao iguais e se estao em ordem ()
 7- empilhar fecha parenteses ) quando abrir um parenteses e desempilhar da pilha
 9- verificar na lista, usar operacoes da lista
-11- 
+11- digitos de 0-9 e * / + - apenas

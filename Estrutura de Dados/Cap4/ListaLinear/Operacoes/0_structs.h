@@ -8,7 +8,7 @@ struct noh{
 };
 /* ------------------------------- */
 struct dLista{
-    int   quantidade;
+    int         quantidade;
     struct noh *primeiro;
     struct noh *ultimo;
 };

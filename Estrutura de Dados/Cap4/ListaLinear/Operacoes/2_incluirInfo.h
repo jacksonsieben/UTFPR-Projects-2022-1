@@ -1,3 +1,5 @@
+#ifndef INCLUIR_INFO_H
+#define INCLUIR_INFO_H
 
 void incluirInfo(pDLista pd, void *info){
 
@@ -30,3 +32,5 @@ void incluirInfo(pDLista pd, void *info){
         auxUltimo->prox = pNovo;
     }
 }
+
+#endif

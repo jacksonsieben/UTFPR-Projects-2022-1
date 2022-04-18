@@ -1,3 +1,6 @@
+#ifndef DESTRUIR_LISTA_H
+#define DESTRUIR_LISTA_H
+
 void destruirListaRecursiva(pNoh atual){
     if (atual == NULL)
         return;
@@ -12,4 +15,6 @@ void destruirLista(pDLista pd){
    pd->ultimo     = NULL;
    pd->quantidade = 0;
 }
+
+#endif
 
