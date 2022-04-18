@@ -1,0 +1,10 @@
+1- inverteFila nao pode usar o inverterFila e sim uma pilha ou usaar o enfileirar e desinfileirar na propria fila
+2-
+3- pode usar direto na lista
+
+
+
+7- checar a quantidade de parenteses dentro de um vetor de parenteses exemplo: [(,)(,(,)] e verificar se sao a quantidade de abrir e fechar sao iguais e se estao em ordem ()
+7- empilhar fecha parenteses ) quando abrir um parenteses e desempilhar da pilha
+9- verificar na lista, usar operacoes da lista
+11- 
