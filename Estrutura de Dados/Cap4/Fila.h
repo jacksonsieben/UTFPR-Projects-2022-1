@@ -24,4 +24,6 @@
 
 #include "OperacoesFila/6_copiarFila.h"
 
+#include "OperacoesFila/7_trocaFila.h"
+
 #endif // FILA_H

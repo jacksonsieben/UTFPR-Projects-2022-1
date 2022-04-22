@@ -41,13 +41,13 @@ int main(){
 
     printf("\nFila Invertida\n");
 
-    info = pFilaInt->pdLista->primeiro->info;
-    imprimirLista(pFilaInt->pdLista, imprimeInt);
-    printf("\n\n%d", *((int*)info));
-
     printf("\nCopia da Fila\n");
 
     pDFila copiaFila = copiarFila(pFilaInt, alocaInfoInt);
     imprimirLista(copiaFila->pdLista, imprimeInt);
 
+    printf("\nTroca na Fila\n");
+
+    trocaFila(copiaFila,6, 2);
+    imprimirLista(copiaFila->pdLista, imprimeInt);
 }

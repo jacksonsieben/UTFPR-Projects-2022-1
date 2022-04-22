@@ -24,6 +24,7 @@ int      filaVazia          (pDFila);
 
 void     inverteFila        (pDFila);
 pDFila   copiarFila         (pDFila, FuncaoAlocacao);
+void     trocaFila          (pDFila, int, int);
 
 
 #endif
