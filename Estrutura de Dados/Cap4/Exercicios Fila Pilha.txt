@@ -1,4 +1,4 @@
-1- inverteFila nao pode usar o inverterLista e sim uma pilha ou usar o enfileirar e desinfileirar na propria fila
+1- fiz o include no fila.h do pilha.h
 2- void inverteFila (pDFila pd){
     if(pd==NULL){
         printf("Fila Vazia!");

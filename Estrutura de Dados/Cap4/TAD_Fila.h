@@ -11,16 +11,17 @@ typedef DFila*        pDFila;
 /*------------------------------------------*/
 /* operacoes                                */
 /*------------------------------------------*/
-pDFila   criarFila        ();
-void     enfileirarInfo   (pDFila, void *);
-void*    desenfileirarInfo(pDFila);
-int      filaVazia        (pDFila);
+pDFila   criarFila          ();
+void     enfileirarInfo     (pDFila, void *);
+void*    desenfileirarInfo  (pDFila);
+int      filaVazia          (pDFila);
 
 /*------------------------------------------*/
 /* operacoes lista de exercicio
 /*------------------------------------------*/
 
-void     inverteFila      (pDFila);
+void     inverteFila        (pDFila);
+pDFila   copiarFila         (pDFila, FuncaoAlocacao);
 
 
 #endif

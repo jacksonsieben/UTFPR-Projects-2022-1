@@ -1,9 +1,14 @@
 #ifndef FILA_H
 #define FILA_H
 
+#include <stdlib.h>
+
 #include "TAD_Fila.h"
 
 #include "ListaLinear/Lista.h"
+#include "ListaLinear/TAD_ListaLinear.h"
+
+#include "Pilha.h"
 
 #include "OperacoesFila/0_structs.h"
 
@@ -16,5 +21,7 @@
 #include "OperacoesFila/4_filaVazia.h"
 
 #include "OperacoesFila/5_inverteFila.h"
+
+#include "OperacoesFila/6_copiarFila.h"
 
 #endif // FILA_H
