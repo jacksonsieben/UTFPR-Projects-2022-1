@@ -1,7 +1,7 @@
 1- fiz o include no fila.h do pilha.h
 2- Tive que adicionar a funcao alocacao no TAD Fila
-3- pode usar direto na lista
-
+3- feita!
+4- include de pilha.h no util.h
 
 7- checar a quantidade de parenteses dentro de um vetor de parenteses exemplo: [(,)(,(,)] e verificar se sao a quantidade de abrir e fechar sao iguais e se estao em ordem ()
 7- empilhar fecha parenteses ) quando abrir um parenteses e desempilhar da pilha

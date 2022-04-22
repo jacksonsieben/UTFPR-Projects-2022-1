@@ -48,6 +48,15 @@ int main(){
 
     printf("\nTroca na Fila\n");
 
-    trocaFila(copiaFila,6, 2);
+    trocaFila(copiaFila,4, 2);
     imprimirLista(copiaFila->pdLista, imprimeInt);
+
+    printf("\nPalavra Palindroma\n");
+    char *palavra = "arara";
+    int igual = palindroma(palavra);
+    if(igual == 1){
+        printf("\nAs palavras sao um palindromo!");
+    }else{
+        printf("\nAs palavras nao sao um palindromo!");
+    }
 }

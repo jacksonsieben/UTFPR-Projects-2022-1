@@ -1,8 +1,10 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <stdio.h>
+#include <stdio.h>   
 #include <stdlib.h>
+#include <string.h>
+#include "Pilha.h"
 
 /* ---------------------------------------- */
 /* tipo de dado INT */
@@ -64,6 +66,29 @@ struct Data* alocaData    (int dia, int mes, int ano){
    pd->mes = mes;
    pd->ano = ano;
    return pd;
+}
+/* ---------------------------------------- */
+/*               Exercicios                 */
+/* ---------------------------------------- */
+
+int palindroma(char palavra[]){
+   int tam = strlen(palavra);
+   char invPalavra[tam];
+
+   pDPilha pilha = criarPilha();
+
+   for (int i = 0; i < tam; i++){
+      empilharInfo(pilha, palavra[i]);
+   }
+   for (int i = 0; i < tam; i++){
+     invPalavra[i] =  desempilharInfo(pilha);
+   }
+   for (int i = 0; i < tam; i++){
+      if(palavra[i]!=invPalavra[i]){
+         return 0;
+      }
+   }
+   return 1;     
 }
 
 #endif /* UTILS_H */
