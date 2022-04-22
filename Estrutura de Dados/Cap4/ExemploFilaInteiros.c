@@ -59,4 +59,6 @@ int main(){
     }else{
         printf("\nAs palavras nao sao um palindromo!");
     }
+
+    
 }

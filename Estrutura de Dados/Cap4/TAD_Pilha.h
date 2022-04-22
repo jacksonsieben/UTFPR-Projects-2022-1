@@ -7,6 +7,8 @@
 typedef struct dPilha  DPilha;
 typedef DPilha*        pDPilha;
 
+typedef int   (*FuncaoComparacao) (void *, void *);
+
 /*------------------------------------------*/
 /* operacoes                                */
 /*------------------------------------------*/
@@ -14,6 +16,11 @@ pDPilha  criarPilha     ();
 void     empilharInfo   (pDPilha, void *);
 void*    desempilharInfo(pDPilha);
 int      pilhaVazia     (pDPilha);
+/*------------------------------------------*/
+/*               Exercicios                 */
+/*------------------------------------------*/
+int      pilhasIguais   (pDPilha, pDPilha, FuncaoComparacao);
+
 
 #endif
 

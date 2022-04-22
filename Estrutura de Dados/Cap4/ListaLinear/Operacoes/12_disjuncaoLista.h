@@ -11,8 +11,8 @@ int disjuncaoLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
 
         atual = lista1->primeiro;
         while(atual!=NULL){
-            if(pfc(atual->info,pnl2->info)==0){
-               return 0;
+            if(pfc(atual->info,pnl2->info)==1){
+               return 1;
             }
             atual = atual->prox;
         }
