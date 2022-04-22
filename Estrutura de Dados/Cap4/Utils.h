@@ -81,7 +81,7 @@ int palindroma(char palavra[]){
       empilharInfo(pilha, palavra[i]);
    }
    for (int i = 0; i < tam; i++){
-     invPalavra[i] =  desempilharInfo(pilha);
+     invPalavra[i] = desempilharInfo(pilha);
    }
    for (int i = 0; i < tam; i++){
       if(palavra[i]!=invPalavra[i]){

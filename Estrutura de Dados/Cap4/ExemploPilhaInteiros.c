@@ -22,17 +22,25 @@ int main(){
         printf("\nDesempilhou o inteiro = %d \n", *((int*)info));
     }*/
 
-    empilharInfo(pPilhaIntCopia, alocaInt(5));
+    /*empilharInfo(pPilhaIntCopia, alocaInt(5));
     empilharInfo(pPilhaIntCopia, alocaInt(3));
     empilharInfo(pPilhaIntCopia, alocaInt(9));
     empilharInfo(pPilhaIntCopia, alocaInt(1));
     empilharInfo(pPilhaIntCopia, alocaInt(2));
-    empilharInfo(pPilhaIntCopia, alocaInt(30));
+    empilharInfo(pPilhaIntCopia, alocaInt(30));*/
 
+    pPilhaIntCopia = copiarPilha(pPilhaInt);
+
+    printf("\nPilha Original\n");
+    imprimirLista(pPilhaInt->pdLista, imprimeInt);
+    printf("\nPilha Copia\n");
+    imprimirLista(pPilhaIntCopia->pdLista, imprimeInt);
 
     if(pilhasIguais(pPilhaInt, pPilhaIntCopia, comparaInt) == 0){
         printf("\nPilhas Iguais!");
     }else{
         printf("\nPilhas Diferentes!");
     }
+
+
 }

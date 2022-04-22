@@ -20,6 +20,7 @@ int      pilhaVazia     (pDPilha);
 /*               Exercicios                 */
 /*------------------------------------------*/
 int      pilhasIguais   (pDPilha, pDPilha, FuncaoComparacao);
+pDPilha  copiarPilha    (pDPilha);
 
 
 #endif
