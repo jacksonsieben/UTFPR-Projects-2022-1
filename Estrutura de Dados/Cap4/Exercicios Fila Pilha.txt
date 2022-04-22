@@ -1,16 +1,5 @@
 1- fiz o include no fila.h do pilha.h
-2- void inverteFila (pDFila pd){
-    if(pd==NULL){
-        printf("Fila Vazia!");
-    }
-    int count = pd->pdLista->quantidade;
-    pNoh atual = pd->pdLista->primeiro;
-
-    for (int i = 0; i < count; i++){
-        enfileirarInfo(pd, desenfileirarInfo(pd));
-    }
-}
-
+2- Tive que adicionar a funcao alocacao no TAD Fila
 3- pode usar direto na lista
 
 

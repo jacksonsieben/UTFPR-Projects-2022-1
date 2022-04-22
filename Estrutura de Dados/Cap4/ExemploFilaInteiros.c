@@ -36,9 +36,6 @@ int main(){
 
     printf("\nFila Original\n");
     imprimirLista(pFilaInt->pdLista, imprimeInt);
-    
-    /*info = desenfileirarInfo(pFilaInt);
-    printf("\n\nRetirou %d", *((int*)info));*/
 
     inverteFila(pFilaInt);
 
@@ -48,7 +45,7 @@ int main(){
     imprimirLista(pFilaInt->pdLista, imprimeInt);
     printf("\n\n%d", *((int*)info));
 
-    printf("\nFila Invertida\n");
+    printf("\nCopia da Fila\n");
 
     pDFila copiaFila = copiarFila(pFilaInt, alocaInfoInt);
     imprimirLista(copiaFila->pdLista, imprimeInt);
