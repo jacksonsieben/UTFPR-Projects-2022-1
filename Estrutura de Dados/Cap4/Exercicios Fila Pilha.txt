@@ -1,7 +1,17 @@
-1- inverteFila nao pode usar o inverterFila e sim uma pilha ou usaar o enfileirar e desinfileirar na propria fila
-2-
-3- pode usar direto na lista
+1- inverteFila nao pode usar o inverterLista e sim uma pilha ou usar o enfileirar e desinfileirar na propria fila
+2- void inverteFila (pDFila pd){
+    if(pd==NULL){
+        printf("Fila Vazia!");
+    }
+    int count = pd->pdLista->quantidade;
+    pNoh atual = pd->pdLista->primeiro;
 
+    for (int i = 0; i < count; i++){
+        enfileirarInfo(pd, desenfileirarInfo(pd));
+    }
+}
+
+3- pode usar direto na lista
 
 
 7- checar a quantidade de parenteses dentro de um vetor de parenteses exemplo: [(,)(,(,)] e verificar se sao a quantidade de abrir e fechar sao iguais e se estao em ordem ()

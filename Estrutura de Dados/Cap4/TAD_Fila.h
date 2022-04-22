@@ -15,6 +15,12 @@ pDFila   criarFila        ();
 void     enfileirarInfo   (pDFila, void *);
 void*    desenfileirarInfo(pDFila);
 int      filaVazia        (pDFila);
-void     inverteFila      (pDFila, FuncaoAlocacao);
+
+/*------------------------------------------*/
+/* operacoes lista de exercicio
+/*------------------------------------------*/
+
+void     inverteFila      (pDFila);
+
 
 #endif
