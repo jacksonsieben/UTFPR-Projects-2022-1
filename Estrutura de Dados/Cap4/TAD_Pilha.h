@@ -21,6 +21,7 @@ int      pilhaVazia     (pDPilha);
 /*------------------------------------------*/
 int      pilhasIguais   (pDPilha, pDPilha, FuncaoComparacao);
 pDPilha  copiarPilha    (pDPilha);
+int      removeInfo     (pDPilha, void*, FuncaoComparacao);
 
 
 #endif

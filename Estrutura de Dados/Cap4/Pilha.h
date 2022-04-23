@@ -19,4 +19,6 @@
 
 #include "OperacoesPilha/6_copiarPilha.h"
 
+#include "OperacoesPilha/7_removeInfo.h"
+
 #endif

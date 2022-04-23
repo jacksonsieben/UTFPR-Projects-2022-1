@@ -91,4 +91,23 @@ int palindroma(char palavra[]){
    return 1;     
 }
 
+int balanceamento (char expre[]){
+   pDPilha pilha = criarPilha();
+
+   int tam = strlen(expre);
+
+   if(tam % 2 !=0){
+      return 0;
+   }
+   for (int i = 0; i < tam; i++){
+      if(expre[i]=='('){
+         empilharInfo(pilha, '(');
+      }else if (expre[i] == ')'){
+         desempilharInfo(pilha);
+      }
+   }
+   return pilhaVazia(pilha);
+   
+}
+
 #endif /* UTILS_H */

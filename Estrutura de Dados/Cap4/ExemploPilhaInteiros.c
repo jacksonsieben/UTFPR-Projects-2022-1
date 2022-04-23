@@ -42,5 +42,25 @@ int main(){
         printf("\nPilhas Diferentes!");
     }
 
+    char expressao[10]={'(','(','(','(',')',')','(', '(', ')'};
+
+    int balanceado = balanceamento(expressao);
+
+    if(balanceado==1){
+        printf("\nBalanceado");
+    }else{
+        printf("\nDesbalanceado");
+    }
+
+
+
+    if(removeInfo(pPilhaIntCopia, alocaInt(1), comparaInt)){
+        printf("\nRemover Info '1'\n");
+        imprimirLista(pPilhaIntCopia->pdLista, imprimeInt);
+    }else{
+        printf("\nErro ao Remover Info");
+    }
+
+    
 
 }
