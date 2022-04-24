@@ -8,6 +8,8 @@ typedef struct dPilha  DPilha;
 typedef DPilha*        pDPilha;
 
 typedef int   (*FuncaoComparacao) (void *, void *);
+typedef void  (*FuncaoLiberacao)  (void *);
+typedef void* (*FuncaoAlocacao)   (void *);
 
 /*------------------------------------------*/
 /* operacoes                                */
@@ -20,8 +22,10 @@ int      pilhaVazia     (pDPilha);
 /*               Exercicios                 */
 /*------------------------------------------*/
 int      pilhasIguais   (pDPilha, pDPilha, FuncaoComparacao);
-pDPilha  copiarPilha    (pDPilha);
+pDPilha  copiarPilha    (pDPilha, FuncaoAlocacao);
 int      removeInfo     (pDPilha, void*, FuncaoComparacao);
+pDPilha  interseccao    (pDPilha, pDPilha, FuncaoComparacao);
+void     limpaPilha     (pDPilha, FuncaoLiberacao);
 
 
 #endif

@@ -1,7 +1,8 @@
 #ifndef INTERSECAO_LISTA_H
 #define INTERSECAO_LISTA_H
 
-pDLista intersecaoLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
+pDLista 
+intersecaoLista (pDLista lista1, pDLista lista2, FuncaoComparacao pfc){
     pDLista pNovaLista = criarLista();
     
     pNoh atual, pnl2;

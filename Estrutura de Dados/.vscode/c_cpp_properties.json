@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:/Users/jacks/Documents/Projetos/UTFPR-Projects/Estrutura de Dados/Cap4/ListaLinear/**"
             ],
             "defines": [
                 "_DEBUG",

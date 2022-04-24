@@ -29,7 +29,7 @@ int main(){
     empilharInfo(pPilhaIntCopia, alocaInt(2));
     empilharInfo(pPilhaIntCopia, alocaInt(30));*/
 
-    pPilhaIntCopia = copiarPilha(pPilhaInt);
+    pPilhaIntCopia = copiarPilha(pPilhaInt, alocaInfoInt);
 
     printf("\nPilha Original\n");
     imprimirLista(pPilhaInt->pdLista, imprimeInt);
@@ -52,8 +52,6 @@ int main(){
         printf("\nDesbalanceado");
     }
 
-
-
     if(removeInfo(pPilhaIntCopia, alocaInt(1), comparaInt)){
         printf("\nRemover Info '1'\n");
         imprimirLista(pPilhaIntCopia->pdLista, imprimeInt);
@@ -62,5 +60,34 @@ int main(){
     }
 
     
+
+    printf("\nPilha Original\n");
+    imprimirLista(pPilhaInt->pdLista, imprimeInt);
+    
+
+    limpaPilha(pPilhaInt, free);
+
+    printf("\nPilha Original - Vazia\n");
+    imprimirLista(pPilhaInt->pdLista, imprimeInt);
+    printf("\nPilha Original - Tamanho %d", pPilhaInt->pdLista->quantidade);
+
+    
+
+    empilharInfo(pPilhaInt, alocaInt(5));
+    empilharInfo(pPilhaInt, alocaInt(4));
+    empilharInfo(pPilhaInt, alocaInt(9));
+    empilharInfo(pPilhaInt, alocaInt(1));
+    empilharInfo(pPilhaInt, alocaInt(8));
+
+    printf("\nPilha Original\n");
+    imprimirLista(pPilhaInt->pdLista, imprimeInt);
+    printf("\nPilha Copia\n");
+    imprimirLista(pPilhaIntCopia->pdLista, imprimeInt);
+
+    pDPilha pInterseccao = criarPilha();
+    pInterseccao = interseccao(pPilhaInt, pPilhaIntCopia, comparaInt);
+    printf("\nPilha Interseccao\n");
+    imprimirLista(pInterseccao->pdLista, imprimeInt);
+
 
 }
