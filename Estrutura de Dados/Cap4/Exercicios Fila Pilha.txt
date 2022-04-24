@@ -7,5 +7,5 @@
  7- feita!
  8- adicionei a FuncaoAlocacao no TAD pilha
  9- verificar na lista, usar operacoes da lista
-10- 
+10- feita!
 11- digitos de 0-9 e * / + - apenas

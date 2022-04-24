@@ -7,7 +7,7 @@
 typedef struct dPilha  DPilha;
 typedef DPilha*        pDPilha;
 
-typedef int   (*FuncaoComparacao) (void *, void *);
+/*typedef int   (*FuncaoComparacao) (void *, void *);
 typedef void  (*FuncaoLiberacao)  (void *);
 typedef void* (*FuncaoAlocacao)   (void *);
 

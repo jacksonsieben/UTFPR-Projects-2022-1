@@ -8,8 +8,6 @@
 typedef struct dFila  DFila;
 typedef DFila*        pDFila;
 
-typedef void* (*FuncaoAlocacao)   (void *);
-
 /*------------------------------------------*/
 /* operacoes                                */
 /*------------------------------------------*/

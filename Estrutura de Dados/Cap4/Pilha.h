@@ -1,9 +1,9 @@
 #ifndef PILHA_H
 #define PILHA_H
 
-#include "TAD_Pilha.h"
+#include "Lista.h"
 
-#include "ListaLinear/Lista.h"
+#include "TAD_Pilha.h"
 
 #include "OperacoesPilha/0_structs.h"
 

@@ -3,10 +3,9 @@
 
 #include <stdlib.h>
 
-#include "TAD_Fila.h"
+#include "Lista.h"
 
-#include "ListaLinear/Lista.h"
-#include "ListaLinear/TAD_ListaLinear.h"
+#include "TAD_Fila.h"
 
 #include "Pilha.h"
 
