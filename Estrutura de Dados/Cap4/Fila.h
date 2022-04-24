@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#include "Lista.h"
+#include "ListaLinear/Lista.h"
 
 #include "TAD_Fila.h"
 

@@ -1,7 +1,7 @@
 #ifndef PILHA_H
 #define PILHA_H
 
-#include "Lista.h"
+#include "ListaLinear/Lista.h"
 
 #include "TAD_Pilha.h"
 
