@@ -71,6 +71,18 @@ struct Data* alocaData    (int dia, int mes, int ano){
 /*               Exercicios                 */
 /* ---------------------------------------- */
 
+void * alocaVoid(char palavra){
+   char *p = malloc(sizeof(char));
+   *p = palavra;
+   return p;
+}
+
+char alocaChar(void *info){
+   char *p = malloc(sizeof(char));
+   *p = *(char *) info;
+   return *p;
+}
+
 int palindroma(char palavra[]){
    int tam = strlen(palavra);
    char invPalavra[tam];
@@ -78,10 +90,10 @@ int palindroma(char palavra[]){
    pDPilha pilha = criarPilha();
 
    for (int i = 0; i < tam; i++){
-      empilharInfo(pilha, palavra[i]);
+      empilharInfo(pilha, alocaVoid(palavra[i]));
    }
    for (int i = 0; i < tam; i++){
-     invPalavra[i] = desempilharInfo(pilha);
+     invPalavra[i] = alocaChar(desempilharInfo(pilha));
    }
    for (int i = 0; i < tam; i++){
       if(palavra[i]!=invPalavra[i]){
@@ -101,7 +113,7 @@ int balanceamento (char expre[]){
    }
    for (int i = 0; i < tam; i++){
       if(expre[i]=='('){
-         empilharInfo(pilha, '(');
+         empilharInfo(pilha, alocaVoid('('));
       }else if (expre[i] == ')'){
          desempilharInfo(pilha);
       }
