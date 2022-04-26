@@ -1,11 +1,11 @@
- 1- fiz o include no fila.h do pilha.h
- 2- Tive que adicionar a funcao alocacao no TAD Fila
+ 1- feita!
+ 2- feita!
  3- feita!
- 4- include de pilha.h no util.h
- 5- tive que adicioanr a funcao de comparacao no TAD pilha
+ 4- feita!
+ 5- feita!
  6- feita!
  7- feita!
- 8- adicionei a FuncaoAlocacao no TAD pilha
- 9- verificar na lista, usar operacoes da lista
+ 8- feita!
+ 9- feita!
 10- feita!
-11- digitos de 0-9 e * / + - apenas
+11- checar questao de prioridade ao fazer sem parenteses

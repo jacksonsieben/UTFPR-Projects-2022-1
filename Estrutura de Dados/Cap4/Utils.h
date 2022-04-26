@@ -79,8 +79,14 @@ void * alocaVoid(char palavra){
 
 char alocaChar(void *info){
    char *p = malloc(sizeof(char));
-   *p = *(char *) info;
+   *p = (char *) info;
    return *p;
+}
+
+int alocaVoidInt (void *info){
+   int *i = malloc(sizeof(int));
+   *i = (int *) info;
+   return *i;
 }
 
 int palindroma(char palavra[]){
@@ -120,6 +126,41 @@ int balanceamento (char expre[]){
    }
    return pilhaVazia(pilha);
    
+}
+
+int avalia (char expr[]){
+   pDPilha pilhaOperandos = criarPilha();
+   pDPilha pilhaOperadores = criarPilha();
+
+   int tam = strlen(expr);
+   //int resultado;
+
+   for (int i = 0; i < tam; i++){
+      switch(expr[i]){
+         case '+' : empilharInfo(pilhaOperadores, expr[i]); break;
+         case '-' : empilharInfo(pilhaOperadores, expr[i]); break;
+         case '*' : empilharInfo(pilhaOperadores, expr[i]); break;
+         case '/' : empilharInfo(pilhaOperadores, expr[i]); break;
+         default  : empilharInfo(pilhaOperandos,  expr[i]); break; 
+      }
+   }
+
+   int resultado = alocaVoidInt(desempilharInfo(pilhaOperandos)) - 48;
+
+   for (;pilhaVazia(pilhaOperadores)==0 && pilhaVazia(pilhaOperandos)==0;){
+      char operador = alocaChar(desempilharInfo(pilhaOperadores));
+      int operando  = alocaVoidInt(desempilharInfo(pilhaOperandos)) - 48;
+
+      switch(operador){
+         case '+' : resultado += operando; break;
+         case '-' : resultado -= operando; break;
+         case '*' : resultado *= operando; break;
+         case '/' : resultado /= operando; break;
+         default  : break; 
+      }
+   }
+
+   return resultado;
 }
 
 #endif /* UTILS_H */

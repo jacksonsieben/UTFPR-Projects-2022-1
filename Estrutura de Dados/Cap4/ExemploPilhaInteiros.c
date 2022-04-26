@@ -29,7 +29,7 @@ int main(){
     empilharInfo(pPilhaIntCopia, alocaInt(2));
     empilharInfo(pPilhaIntCopia, alocaInt(30));*/
 
-    pPilhaIntCopia = copiarPilha(pPilhaInt, alocaInfoInt);
+    /*pPilhaIntCopia = copiarPilha(pPilhaInt, alocaInfoInt);
 
     printf("\nPilha Original\n");
     imprimirLista(pPilhaInt->pdLista, imprimeInt);
@@ -87,7 +87,14 @@ int main(){
     pDPilha pInterseccao = criarPilha();
     pInterseccao = interseccao(pPilhaInt, pPilhaIntCopia, comparaInt);
     printf("\nPilha Interseccao\n");
-    imprimirLista(pInterseccao->pdLista, imprimeInt);
+    imprimirLista(pInterseccao->pdLista, imprimeInt);*/
+
+    char exp[10]={'*','2','8','+','4','5'};
+
+    int resultado = avalia(exp);
+    //int resultado =2;
+
+    printf("\nResultado = %d\n", resultado);
 
 
 }
