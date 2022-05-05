@@ -1,0 +1,339 @@
+ A-
+select
+    pat_codigo,
+    pat_descricao
+ from
+    tb_patrimonio
+ where
+    pat_codmarca not in     (
+                            select
+                              mar_codigo
+                            from
+                              tb_marca
+                            where
+                              upper(mar_descricao) in ('VALITA','ARNO')
+                            )
+            and
+    pat_codtipo not in      (
+                            select
+                              tip_codigo
+                            from
+                              tb_tipo
+                            where
+                              upper(tip_descricao) = 'UTENSILIOS DOMESTICO'
+                            )
+___________________________________________________________________________
+B-
+select
+	pre_codigo,
+	pre_descricao,
+	count(*)
+from
+	tb_predio,
+	tb_patrimonio
+where
+	pre_codigo = pat_codpredio
+  and
+	pat_coddepartamento in (
+				select
+				  distinct
+				  pat_coddepartamento
+				from
+				  tb_departamento,
+				  tb_patrimonio
+				where
+				  dep_codigo = pat_coddepartamento	
+				 and
+				  upper(dep_descricao) = 'FINANCEIRO'
+				)		
+having
+	count(*) <= 10
+group by
+	pre_codigo,
+	pre_descricao
+/
+___________________________________________________________________________
+C-
+select
+	pre_codigo,
+	pre_descricao
+from
+	tb_predio,
+	tb_patrimonio
+where
+	pre_codigo = pat_codpredio
+  and
+	pat_coddepartamento in (
+				select
+				  distinct
+				  pat_coddepartamento
+				from
+				  tb_departamento,
+				  tb_patrimonio
+				where
+				  dep_codigo = pat_coddepartamento	
+				 and
+				  upper(dep_descricao) = 'ALMOXARIFADO'
+				)
+  and
+	pat_coddepartamento not in (
+				select
+				  distinct
+				  pat_coddepartamento
+				from
+				  tb_departamento,
+				  tb_patrimonio
+				where
+				  dep_codigo = pat_coddepartamento	
+				 and
+				  upper(dep_descricao) = 'COMPRAS'
+				)		
+
+/
+________________________________________________________________________________
+D-
+select
+	dep_descricao,
+	count(*) as Patrimonios
+from
+	tb_patrimonio,
+	tb_departamento
+where
+	dep_codigo = pat_coddepartamento
+having
+	count(*) in (
+			select
+ 			  max(count(*))
+			from
+			  tb_departamento,
+			  tb_patrimonio
+			where
+			  pat_coddepartamento = dep_codigo
+			group by
+			  dep_codigo
+			)
+group by
+	dep_descricao
+/
+________________________________________________________________________________
+E-
+select
+	dep_descricao,
+	count(*)
+from
+	tb_patrimonio,
+  	tb_marca,
+  	tb_departamento,
+	tb_predio,
+	tb_cidade
+where
+  	pat_codmarca = mar_codigo
+ 	and
+  	pat_coddepartamento = dep_codigo
+	and 
+	pat_codpredio = pre_codigo
+	and 
+	pre_codcidade = cid_codigo
+	and
+	upper(cid_descricao) = 'FORTALEZA'
+	and
+	upper(mar_descricao)= 'ARNO'
+having 
+	count(*) = (
+			select
+			  max(count(*))
+			from
+			  tb_patrimonio,
+			  tb_marca,
+			  tb_departamento
+			where
+			  pat_codmarca = mar_codigo
+			 and
+			  pat_coddepartamento = dep_codigo
+			and
+			  upper(mar_descricao) = 'ARNO'
+			group by
+			  dep_codigo
+			)
+group by
+	dep_descricao
+/
+_______________________________________________________________________________
+F-
+select
+	cid_descricao,
+	count(*) as Predios
+from
+	tb_cidade,
+	tb_predio
+where
+	cid_codigo = pre_codcidade
+having
+	count(*) = (
+			select
+			  max(count(*))
+			from
+			  tb_predio
+			group by
+			  pre_codcidade
+			)
+group by
+	cid_descricao
+/
+________________________________________________________________________________
+G-
+select
+ cid_descricao,
+ count(*) as Itens
+from
+ tb_cidade,
+ tb_predio,
+ tb_patrimonio
+where
+ cid_codigo = pre_codcidade
+and
+ pat_codpredio = pre_codigo
+having
+ count(*) = (
+           select
+             max(count(*))
+           from
+             tb_predio,
+     tb_patrimonio
+   where
+     pat_codpredio = pre_codigo
+           group by
+             pre_codcidade
+   )
+group by
+ cid_descricao
+_________________________________________________________________________________
+H-
+select
+   mar_descricao,
+   pat_descricao,
+   pat_vlraquisicao
+from
+   tb_marca,
+   tb_patrimonio
+where
+   mar_codigo = pat_codmarca
+  and
+   pat_vlraquisicao =      (select
+                             max(pat_vlraquisicao)
+                           from
+                             tb_patrimonio)
+_________________________________________________________________________________
+I)
+select
+   dep_descricao,
+   count(*) as patrimonios
+from
+   tb_patrimonio,
+   tb_departamento
+where
+   pat_coddepartamento = dep_codigo
+having
+   count(*) = (
+                   select
+                     max(count(*))
+                   from
+                     tb_departamento,
+                     tb_patrimonio
+                   where
+                     pat_coddepartamento = dep_codigo
+                   group by
+                     dep_codigo
+                   )
+group by
+   dep_descricao
+__________________________________________________________________________________
+J)
+select
+   pre_descricao,
+   cid_descricao
+from
+   tb_predio,
+   tb_patrimonio,
+   tb_cidade
+where
+   pat_codpredio = pre_codigo
+  and
+   pre_codcidade = cid_codigo
+  and
+   pat_vlraquisicao in (
+                           select
+                             max(pat_vlraquisicao)
+                           from
+                             tb_predio,
+                             tb_patrimonio
+                           where
+                             pat_codpredio = pre_codigo
+                           group by
+                             pre_codcidade
+                           )
+___________________________________________________________________________________
+K)
+select
+   tip_descricao,
+   count(*) as itens
+from
+   tb_patrimonio,
+   tb_tipo
+where
+   pat_codtipo = tip_codigo
+having
+   count(*) = (
+                   select
+                     max(count(*))
+                   from
+                     tb_tipo,
+                     tb_patrimonio
+                   where
+                     tip_codigo = pat_codtipo
+                   group by
+                     tip_codigo
+                   )
+group by
+   tip_descricao
+__________________________________________________________________________________
+L)
+select
+   pat_descricao,
+   pre_descricao
+from
+   tb_patrimonio,
+   tb_predio
+where
+   pat_codpredio = pre_codigo
+and
+   pat_codpredio = all (
+                           select
+                             pre_codigo
+                           from
+                             tb_predio
+				)
+__________________________________________________________________________________
+M)
+select
+   mar_descricao,
+   count(*)
+from
+   tb_marca,
+   tb_patrimonio
+where
+   mar_codigo = pat_codmarca
+having
+   count(*) > (
+                   select
+                     avg(count(*))
+                   from
+                     tb_patrimonio,
+                     tb_predio
+                   where
+                     pat_codpredio = pre_codigo
+                   group by
+                     pre_codigo
+                   )
+group by
+   mar_descricao

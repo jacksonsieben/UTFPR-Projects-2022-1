@@ -17,6 +17,4 @@ int pilhasIguais (pDPilha pdP1, pDPilha pdP2, FuncaoComparacao pfc){
     }else{
         return 1;
     }
-
-    
 }

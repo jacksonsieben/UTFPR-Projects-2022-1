@@ -1,0 +1,6 @@
+Exercicios 
+1- Exercicio1.c
+2- ListaLinear/Operacoes/filtrarLista.h
+3- ListaLinear/Operacoes/maiorElemento.h
+4- OperacoesFila/NGE.h
+5- OperacoesPilha/pilhasIguais.h

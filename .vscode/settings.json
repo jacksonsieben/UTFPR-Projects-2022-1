@@ -2,6 +2,8 @@
     "C_Cpp.errorSquiggles": "Enabled",
     "files.associations": {
         "lista.h": "c",
-        "tad_listalinear.h": "c"
+        "tad_listalinear.h": "c",
+        "fila.h": "c",
+        "filtrarlista.h": "c"
     }
 }

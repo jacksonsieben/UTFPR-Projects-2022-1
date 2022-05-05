@@ -4,7 +4,9 @@
 /* tipos de dados                           */
 /*------------------------------------------*/
 typedef struct noh  Noh;
-typedef Noh*        pNoh;
+typedef Noh*    pNoh;
+typedef struct NGE  Nge;
+typedef Nge*    pNge;
 
 /* descritor da lista */
 typedef struct dLista  DLista;
@@ -15,6 +17,7 @@ typedef int   (*FuncaoComparacao) (void *, void *);
 typedef void  (*FuncaoImpressao)  (void *);
 typedef void* (*FuncaoAlocacao)   (void *);
 typedef void  (*FuncaoLiberacao)  (void *);
+typedef int   (*FuncaoFiltro)     (void *);
 
 /*------------------------------------------*/
 /* operacoes                                */
@@ -40,5 +43,10 @@ int      disjuncaoLista         (pDLista, pDLista, FuncaoComparacao);
 int      contidaNaLista         (pDLista, pDLista, FuncaoComparacao);
 void     inverterLista          (pDLista, FuncaoAlocacao);
 void     ImprimirListaRecursiva (pDLista, FuncaoImpressao);
+
+/* Prova 1 - exercicios */
+
+pDLista  filtrarLista            (pDLista, FuncaoFiltro);
+void*    maiorElemento           (pDLista, void*, FuncaoComparacao);
 #endif
 

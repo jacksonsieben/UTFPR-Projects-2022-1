@@ -12,5 +12,8 @@ struct dLista{
     struct noh *primeiro;
     struct noh *ultimo;
 };
-
+struct NGE {
+    void    *info;
+    void    *nge;
+};
 #endif

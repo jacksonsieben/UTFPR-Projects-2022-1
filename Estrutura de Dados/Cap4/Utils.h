@@ -163,4 +163,13 @@ int avalia (char expr[]){
    return resultado;
 }
 
+/* Prova 1  */
+
+int funcaoFiltroInt(void *info){
+   int i = alocaVoidInt(info);
+   if(i%3==0){
+      return 1;
+   }else{return 0;}
+}
+
 #endif /* UTILS_H */

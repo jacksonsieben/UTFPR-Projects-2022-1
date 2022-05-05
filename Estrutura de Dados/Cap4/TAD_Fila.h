@@ -24,5 +24,9 @@ void     inverteFila        (pDFila);
 pDFila   copiarFila         (pDFila, FuncaoAlocacao);
 void     trocaFila          (pDFila, int, int);
 
+/* Prova 1 */
+
+pDLista NGE (pDFila, FuncaoComparacao);
+
 
 #endif

@@ -25,4 +25,6 @@
 
 #include "OperacoesFila/7_trocaFila.h"
 
+#include "OperacoesFila/NGE.h"
+
 #endif // FILA_H

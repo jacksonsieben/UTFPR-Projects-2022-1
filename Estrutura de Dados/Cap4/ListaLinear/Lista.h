@@ -37,3 +37,7 @@
 #include "Operacoes/14_inverterLista.h"
 
 #include "Operacoes/15_imprimirListaRecursiva.h"
+
+#include "Operacoes/filtrarLista.h"
+
+#include "Operacoes/maiorElemento.h"

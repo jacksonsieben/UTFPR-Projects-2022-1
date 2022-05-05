@@ -1,0 +1,38 @@
+3- 
+ select
+    exepre_codexemplar,
+    count(*)
+ from
+    tb_exemplaremprestimo
+ having
+    count(*) > (select
+                    avg(count(*))
+                from
+                    tb_exemplaremprestimo
+                group by
+                    exepre_codexemplar)
+ group by
+ exepre_codexemplar
+___________________________________________________________________________
+4-
+select
+   aut_nome,
+   count(*)
+from
+   tb_autor,
+   tb_autorlivro
+where
+   autliv_codautor = aut_codigo
+having
+   count(*) >
+           (select
+                   count(*)
+           from
+                   tb_autorlivro,
+                   tb_autor
+           where
+                   autliv_codautor = aut_codigo
+                   and
+                   aut_nome = 'José Cordeiro')
+group by
+   aut_nome

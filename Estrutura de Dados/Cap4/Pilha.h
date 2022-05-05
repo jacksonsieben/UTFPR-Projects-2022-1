@@ -25,4 +25,6 @@
 
 #include "OperacoesPilha/9_limpaPilha.h"
 
+#include "OperacoesPilha/pilhasIguais.h"
+
 #endif
