@@ -1,3 +1,4 @@
+
  A-
 select
     pat_codigo,
@@ -238,12 +239,9 @@ having
                    select
                      max(count(*))
                    from
-                     tb_departamento,
-                     tb_patrimonio
-                   where
-                     pat_coddepartamento = dep_codigo
+                     tb_patrimonio                    
                    group by
-                     dep_codigo
+                     pat_coddepartamento
                    )
 group by
    dep_descricao
@@ -263,7 +261,7 @@ where
   and
    pat_vlraquisicao in (
                            select
-                             max(pat_vlraquisicao)
+                             max(sum(pat_vlraquisicao))
                            from
                              tb_predio,
                              tb_patrimonio
@@ -273,7 +271,7 @@ where
                              pre_codcidade
                            )
 ___________________________________________________________________________________
-K)
+K)ERRADA
 select
    tip_descricao,
    count(*) as itens
@@ -297,7 +295,7 @@ having
 group by
    tip_descricao
 __________________________________________________________________________________
-L)
+L)ERRADA - ESQUECER
 select
    pat_descricao,
    pre_descricao
@@ -317,23 +315,20 @@ ________________________________________________________________________________
 M)
 select
    mar_descricao,
-   count(*)
+   sum(pat_vlraquisicao)
 from
    tb_marca,
    tb_patrimonio
 where
    mar_codigo = pat_codmarca
 having
-   count(*) > (
+  sum(pat_vlraquisicao) > (
                    select
-                     avg(count(*))
+                     avg(sum(pat_vlraquisicao))
                    from
-                     tb_patrimonio,
-                     tb_predio
-                   where
-                     pat_codpredio = pre_codigo
+                     tb_patrimonio
                    group by
-                     pre_codigo
+                     pat_codpredio 
                    )
 group by
    mar_descricao
