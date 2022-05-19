@@ -15,6 +15,9 @@
 #include "Operacoes/ArvoreBinaria/6_preOrdem.h"
 #include "Operacoes/ArvoreBinaria/7_posOrdem.h"
 
-#include "Operacoes/ArvoreBinaria/10_quantidadeFolhas.h"
+#include "Operacoes/ArvoreBinaria/8_quantidadeFolhas.h"
+#include "Operacoes/ArvoreBinaria/9_qtdeNohs.h"
+#include "Operacoes/ArvoreBinaria/10_alturaArvore.h"
+#include "Operacoes/ArvoreBinaria/11_iguais.h"
 
 #endif

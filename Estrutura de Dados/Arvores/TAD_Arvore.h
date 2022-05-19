@@ -20,21 +20,27 @@ typedef void (*FuncaoImpressao) (void*);
 /*------------------------------------------*/
 pDArvore   criarArvore(int);
 
-void       incluirInfo    (pDArvore, void *, FuncaoComparacao);
-int        excluirInfo    (pDArvore, void *, FuncaoComparacao);
-pNohArvore buscarInfo     (pDArvore, void *, FuncaoComparacao);
-int        quantidadeNohs (pDArvore);
+void        incluirInfo         (pDArvore, void *, FuncaoComparacao);
+int         excluirInfo         (pDArvore, void *, FuncaoComparacao);
+pNohArvore  buscarInfo          (pDArvore, void *, FuncaoComparacao);
+int         quantidadeNohs      (pDArvore);
 
 /* percursos */
-void      emOrdem  (pNohArvore, FuncaoImpressao);
-void      preOrdem (pNohArvore, FuncaoImpressao);
-void      posOrdem (pNohArvore, FuncaoImpressao);
+void        emOrdem             (pNohArvore, FuncaoImpressao);
+void        preOrdem            (pNohArvore, FuncaoImpressao);
+void        posOrdem            (pNohArvore, FuncaoImpressao);
 
-int       grau            (pDArvore);
-int       nivel           (pDArvore, void *, FuncaoComparacao);
-int       quantidadeFolhas(pNohArvore);
-int       ehFolha         (pDArvore, void *, FuncaoComparacao);
-int       arvoreVazia     (pDArvore);
+int         grau                (pDArvore);
+int         nivel               (pDArvore, void *, FuncaoComparacao);
+int         ehFolha             (pDArvore, void *, FuncaoComparacao);
+int         arvoreVazia         (pDArvore);
+
+/*exercicios*/ 
+
+int         quantidadeFolhas    (pNohArvore);
+int         qtdeNohs            (pDArvore);
+int         altura              (pDArvore);
+int         iguais              (pDArvore, pDArvore, FuncaoComparacao);
 
 #endif
 

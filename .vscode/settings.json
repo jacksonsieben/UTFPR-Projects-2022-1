@@ -4,6 +4,7 @@
         "lista.h": "c",
         "tad_listalinear.h": "c",
         "fila.h": "c",
-        "filtrarlista.h": "c"
+        "filtrarlista.h": "c",
+        "8_qtdenohs.h": "c"
     }
 }
