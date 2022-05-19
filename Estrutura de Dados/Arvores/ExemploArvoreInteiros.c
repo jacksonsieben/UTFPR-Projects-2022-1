@@ -3,10 +3,10 @@
 #include "ArvoreBinaria.h"
 
 int main(){
-    pDArvore pArvoreInt = criarArvore(2);
+    /*pDArvore pArvoreInt = criarArvore(2);
 
     /* teste de inclusao */
-    incluirInfo(pArvoreInt, alocaInt(5), comparaInt);
+    /*incluirInfo(pArvoreInt, alocaInt(5), comparaInt);
     incluirInfo(pArvoreInt, alocaInt(3), comparaInt);
     incluirInfo(pArvoreInt, alocaInt(9), comparaInt);
     incluirInfo(pArvoreInt, alocaInt(1), comparaInt);
@@ -20,12 +20,52 @@ int main(){
     posOrdem(pArvoreInt->raiz, imprimeInt);
 */
     /* teste de exclusao */
-    int res = excluirInfo(pArvoreInt, alocaInt(3), comparaInt);
+    /*int res = excluirInfo(pArvoreInt, alocaInt(3), comparaInt);
     printf("\nExcluiu? = %d \n", res);
 
     emOrdem(pArvoreInt->raiz, imprimeInt);
     printf("\n");
 
     int folhas = quantidadeFolhas(pArvoreInt->raiz);
-    printf("\nQuantidade de folhas = %d \n", folhas);
+    printf("\nQuantidade de folhas = %d \n", folhas);*/
+
+    pDArvore pArvoreInt = criarArvore(2);
+
+    /* teste de inclusao */
+    incluirInfo(pArvoreInt, alocaInt(5), comparaInt);
+    incluirInfo(pArvoreInt, alocaInt(3), comparaInt);
+    incluirInfo(pArvoreInt, alocaInt(9), comparaInt);
+    incluirInfo(pArvoreInt, alocaInt(1), comparaInt);
+    incluirInfo(pArvoreInt, alocaInt(2), comparaInt);
+
+    printf("Arvore 1\n");
+    emOrdem(pArvoreInt->raiz, imprimeInt);
+    printf("\n");
+
+    pDArvore pArvoreInt2 = criarArvore(2);
+
+    /* teste de inclusao 2 */
+    incluirInfo(pArvoreInt2, alocaInt(5), comparaInt);
+    incluirInfo(pArvoreInt2, alocaInt(3), comparaInt);
+    incluirInfo(pArvoreInt2, alocaInt(9), comparaInt);
+    incluirInfo(pArvoreInt2, alocaInt(1), comparaInt);
+    incluirInfo(pArvoreInt2, alocaInt(2), comparaInt);
+
+    printf("Arvore 2\n");
+    emOrdem(pArvoreInt2->raiz, imprimeInt);
+    printf("\n");
+
+    printf("A Arvore 1 tem %d Nohs e %d de altura!", qtdeNohs(pArvoreInt), altura(pArvoreInt));
+
+    if(iguais(pArvoreInt, pArvoreInt2, comparaInt)==0){
+        printf("\nAs arvores sao iguais!\n");
+    }else{
+        printf("\nAs arvores sao diferentes!\n");
+    }
+
+    if(estritamenteBinaria(pArvoreInt)==0){
+        printf("\nA arvore eh estritamente binaria!\n");
+    }else{
+        printf("\nA arvore nao eh estritamente binaria!\n");
+    }
 }

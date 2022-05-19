@@ -19,5 +19,7 @@
 #include "Operacoes/ArvoreBinaria/9_qtdeNohs.h"
 #include "Operacoes/ArvoreBinaria/10_alturaArvore.h"
 #include "Operacoes/ArvoreBinaria/11_iguais.h"
+#include "Operacoes/ArvoreBinaria/12_estritamenteBinaria.h"
+#include "Operacoes/ArvoreBinaria/13_espelho.h"
 
 #endif

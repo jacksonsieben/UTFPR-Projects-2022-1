@@ -4,11 +4,11 @@ int qtdeNohsRecursiva (pNohArvore raiz){
     }
 
     if (raiz->esquerda == NULL && raiz->direita == NULL){
-      return 1; /*  � uma folha */
+      return 1; /*  é uma folha */
     }
 
-    return 1 + quantidadeFolhas(raiz->esquerda) +
-               quantidadeFolhas(raiz->direita);
+    return 1 + qtdeNohsRecursiva(raiz->esquerda) +
+               qtdeNohsRecursiva(raiz->direita);
 }
 
 int qtdeNohs (pDArvore pArvore){

@@ -41,6 +41,8 @@ int         quantidadeFolhas    (pNohArvore);
 int         qtdeNohs            (pDArvore);
 int         altura              (pDArvore);
 int         iguais              (pDArvore, pDArvore, FuncaoComparacao);
+int         estritamenteBinaria (pDArvore);
+pDArvore    espelho             (pDArvore);
 
 #endif
 
