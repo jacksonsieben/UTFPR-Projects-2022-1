@@ -55,7 +55,13 @@ int main(){
     emOrdem(pArvoreInt2->raiz, imprimeInt);
     printf("\n");
 
-    printf("A Arvore 1 tem %d Nohs e %d de altura!", qtdeNohs(pArvoreInt), altura(pArvoreInt));
+    printf("\nA Arvore 1 tem %d Nohs e %d de altura e %d de comprimento!\n", qtdeNohs(pArvoreInt), altura(pArvoreInt), comprimentoInterno(pArvoreInt));
+
+    if(balanceada(pArvoreInt)==0){
+        printf("\nA arvore 1 esta balanceada!\n");
+    }else{
+        printf("\nA arvore 1 nao esta balanceada!\n");
+    }
 
     if(iguais(pArvoreInt, pArvoreInt2, comparaInt)==0){
         printf("\nAs arvores sao iguais!\n");
@@ -68,4 +74,13 @@ int main(){
     }else{
         printf("\nA arvore nao eh estritamente binaria!\n");
     }
+    
+    /*pDArvore pArvoreIntEspelho;
+    pArvoreIntEspelho = espelho(pArvoreInt); //! Por algum motivo nao compila no cmd externo entao apenas no terminal interno para ver
+
+    printf("Arvore 2 - Espelho\n");
+    emOrdem(pArvoreIntEspelho->raiz, imprimeInt);
+    printf("\n");*/
+
+
 }

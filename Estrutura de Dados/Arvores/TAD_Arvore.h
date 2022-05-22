@@ -43,6 +43,9 @@ int         altura              (pDArvore);
 int         iguais              (pDArvore, pDArvore, FuncaoComparacao);
 int         estritamenteBinaria (pDArvore);
 pDArvore    espelho             (pDArvore);
+void        amplitudere         (pDArvore);
+int         comprimentoInterno  (pDArvore);
+int         balanceada          (pDArvore);
 
 #endif
 

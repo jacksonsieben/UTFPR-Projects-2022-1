@@ -5,6 +5,8 @@
         "tad_listalinear.h": "c",
         "fila.h": "c",
         "filtrarlista.h": "c",
-        "8_qtdenohs.h": "c"
+        "8_qtdenohs.h": "c",
+        "12_estritamentebinaria.h": "c",
+        "13_espelho.h": "c"
     }
 }

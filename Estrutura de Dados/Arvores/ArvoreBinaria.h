@@ -1,6 +1,8 @@
 #ifndef ARVORE_BINARIA_H
 #define ARVORE_BINARIA_H
 
+#include <stdlib.h>
+
 #include "TAD_Arvore.h"
 
 #include "Operacoes/ArvoreBinaria/0_struct_Arvore.h"
@@ -21,5 +23,8 @@
 #include "Operacoes/ArvoreBinaria/11_iguais.h"
 #include "Operacoes/ArvoreBinaria/12_estritamenteBinaria.h"
 #include "Operacoes/ArvoreBinaria/13_espelho.h"
+#include "Operacoes/ArvoreBinaria/14_amplitude.h"
+#include "Operacoes/ArvoreBinaria/15_comprimentoInterno.h"
+#include "Operacoes/ArvoreBinaria/16_balanceada.h"
 
 #endif
