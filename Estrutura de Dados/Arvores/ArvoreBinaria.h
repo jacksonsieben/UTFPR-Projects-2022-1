@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+#include "ListaLinear/Lista.h"
+
 #include "TAD_Arvore.h"
 
 #include "Operacoes/ArvoreBinaria/0_struct_Arvore.h"

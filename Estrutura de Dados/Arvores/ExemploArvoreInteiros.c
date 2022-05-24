@@ -37,6 +37,7 @@ int main(){
     incluirInfo(pArvoreInt, alocaInt(9), comparaInt);
     incluirInfo(pArvoreInt, alocaInt(1), comparaInt);
     incluirInfo(pArvoreInt, alocaInt(2), comparaInt);
+    incluirInfo(pArvoreInt, alocaInt(8), comparaInt);
 
     printf("Arvore 1\n");
     emOrdem(pArvoreInt->raiz, imprimeInt);
@@ -81,6 +82,9 @@ int main(){
     printf("Arvore 2 - Espelho\n");
     emOrdem(pArvoreIntEspelho->raiz, imprimeInt);
     printf("\n");*/
+
+    printf("\nArvore 2 - Amplitude\n");
+    amplitude(pArvoreInt, imprimeInt);
 
 
 }
