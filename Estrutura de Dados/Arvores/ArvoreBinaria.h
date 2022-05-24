@@ -26,5 +26,7 @@
 #include "Operacoes/ArvoreBinaria/14_amplitude.h"
 #include "Operacoes/ArvoreBinaria/15_comprimentoInterno.h"
 #include "Operacoes/ArvoreBinaria/16_balanceada.h"
+#include "Operacoes/ArvoreBinaria/17_isBST.h"
+#include "Operacoes/ArvoreBinaria/18_avalia.h"
 
 #endif

@@ -1,0 +1,3 @@
+void amplitude (pDArvore arvore){
+    
+} 
