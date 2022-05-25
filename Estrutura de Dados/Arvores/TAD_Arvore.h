@@ -43,10 +43,10 @@ int         altura              (pDArvore);
 int         iguais              (pDArvore, pDArvore, FuncaoComparacao);
 int         estritamenteBinaria (pDArvore);
 pDArvore    espelho             (pDArvore);
-void        amplitudere         (pDArvore);//! nao finalizado
+void        amplitude           (pDArvore, FuncaoImpressao);
 int         comprimentoInterno  (pDArvore);
 int         balanceada          (pDArvore);
-int         isBST               (pDArvore);//! nao iniciado
+int         isBST               (pDArvore, void*, void*, FuncaoComparacao);
 int         avalia              (pDArvore);//! nao iniciado
 
 #endif
