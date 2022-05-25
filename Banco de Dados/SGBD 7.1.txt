@@ -1,0 +1,147 @@
+1-
+select
+	nome,
+	sum(total_venda),
+	sum(total_pedido)
+from
+(
+	select
+		nome,
+		sum(qt_quantidade * val_unitario) as total_venda,
+		0 as total_pedido
+	from
+		tb_cadastro,
+		tb_nota,
+		tb_nota_produto
+	where
+		tb_nota.cod_cadastro = tb_cadastro.cod_cadastro
+		and
+		tb_nota.cod_nota = tb_nota_produto.cod_nota
+	group by
+		nome
+	union all
+	select
+		nome,
+		0 as total_venda,
+		sum(qt_quantidade * val_unitario) as total_pedido
+	from
+		tb_cadastro,
+		tb_pedido,
+		tb_pedido_produto
+	where
+		tb_pedido.cod_cadastro = tb_cadastro.cod_cadastro
+		and
+		tb_pedido.cod_pedido = tb_pedido_produto.cod_pedido
+	group by
+		nome
+)
+group by
+	nome
+_________________________________________________________________________________
+2-
+select
+	desc_produto
+from
+	tb_produto,
+	tb_pedido_produto
+where
+	tb_pedido_produto.cod_produto = tb_produto.cod_produto
+union
+select
+	desc_produto
+from
+	tb_produto,
+	tb_nota_produto
+where
+	tb_nota_produto.cod_produto=tb_produto.cod_produto
+_________________________________________________________________________________
+3-
+select
+	desc_produto
+from
+	tb_produto,
+	tb_pedido_produto
+where
+	tb_pedido_produto.cod_produto = tb_produto.cod_produto
+intersect
+select
+	desc_produto
+from
+	tb_produto,
+	tb_nota_produto
+where
+	tb_nota_produto.cod_produto=tb_produto.cod_produto
+_________________________________________________________________________________
+4-
+select
+	desc_produto
+from
+	tb_produto,
+	tb_nota_produto
+where
+	tb_nota_produto.cod_produto = tb_produto.cod_produto
+minus
+select
+	desc_produto
+from
+	tb_produto,
+	tb_pedido_produto
+where
+	tb_pedido_produto.cod_produto = tb_produto.cod_produto
+_________________________________________________________________________________
+5-
+select
+	tb_produto.cod_produto,
+	tb_produto.desc_produto
+from
+	tb_produto,
+	tb_nota_produto,
+	tb_nota_venda
+where
+	tb_produto.cod_produto = tb_nota_produto.cod_produto
+	and
+	tb_nota_produto.cod_nota = tb_nota_venda.cod_nota
+minus
+select
+	tb_produto.cod_produto,
+	tb_produto.desc_produto
+from
+	tb_produto,
+	tb_nota_produto,
+	tb_nota_compra
+where
+	tb_produto.cod_produto = tb_nota_produto.cod_produto
+	and
+	cod_nota = cod_nota_compra
+_________________________________________________________________________________
+6-
+select
+	nome,
+	desc_cidade
+from
+	tb_cadastro,
+	tb_cidade,
+	tb_nota_produto,
+	tb_nota_venda
+where
+	tb_cadastro.cod_cidade = tb_cidade.cod_cidade
+	and
+	tb_cadastro.cod_cadastro = tb_nota_venda.cod_cadastro
+	and
+	tb_nota_venda.cod_nota = tb_nota_produto.cod_nota
+intersect
+select
+	nome,
+	desc_cidade
+from
+	tb_cadastro,
+	tb_cidade,
+	tb_nota_produto,
+	tb_nota_compra
+where
+	tb_cadastro.cod_cidade = tb_cidade.cod_cidade
+	and
+	tb_cadastro.cod_cadastro = tb_nota_compra.cod_cadastro
+	and
+	tb_nota_compra.cod_nota_compra = tb_nota_produto.cod_nota
+_________________________________________________________________________________
