@@ -1,0 +1,4 @@
+int avalia (pDArvore arvore){
+
+    
+}
