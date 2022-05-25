@@ -74,13 +74,24 @@ int main(){
     }else{
         printf("\nA arvore nao eh estritamente binaria!\n");
     }
-    
+
+    if(isBST(pArvoreInt, alocaInt(2), alocaInt(9), comparaInt)==0){
+        printf("\nA arvore eh uma arvore binaria de busca!\n");
+    }else{
+        printf("\nA arvore nao eh uma arvore binaria de busca!\n");
+    }
     /*pDArvore pArvoreIntEspelho;
     pArvoreIntEspelho = espelho(pArvoreInt); //! Por algum motivo nao compila no cmd externo entao apenas no terminal interno para ver
 
     printf("Arvore 2 - Espelho\n");
     emOrdem(pArvoreIntEspelho->raiz, imprimeInt);
     printf("\n");*/
+
+    printf("\nArvore 1 - Amplitude\n");
+    amplitude(pArvoreInt, imprimeInt);
+
+    printf("\nArvore 2 - Amplitude\n");
+    amplitude(pArvoreInt2, imprimeInt);
 
 
 }

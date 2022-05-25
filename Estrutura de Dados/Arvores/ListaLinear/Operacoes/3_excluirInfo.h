@@ -1,11 +1,11 @@
-int excluirInfo(pDLista pd, void *info, FuncaoComparacao pfc){
+int excluirInfoLista(pDLista pd, void *info, FuncaoComparacao pfc){
 
     pNoh atual, ant;
 
     atual = pd->primeiro;
     ant   = NULL;
 
-    /* encontra a informação na lista */
+    /* encontra a informaï¿½ï¿½o na lista */
     while(atual != NULL){
        if (pfc(atual->info, info) == 0)
           break;
