@@ -36,7 +36,7 @@ struct Data{
    int dia, mes, ano;
 };
 /* ---------------------------------------- */
-int comparaData  (void *info1, void *info2){
+int          comparaData  (void *info1, void *info2){
     struct Data *p1 = (struct Data *) info1;
     struct Data *p2 = (struct Data *) info2;
     return ((p2->ano - p1->ano)*365) +
@@ -63,49 +63,6 @@ struct Data* alocaData    (int dia, int mes, int ano){
    pd->mes = mes;
    pd->ano = ano;
    return pd;
-}
-
-/* ---------------------------------------- */
-/* funcoes utillizadas no grafo app     */
-/* ---------------------------------------- */
-
-int comparaVertice(void *info1, void *info2){
-
-    pVertice v1 = (pVertice) info1;
-    pVertice v2 = (pVertice) info2;
-
-    int *id1 = (int *) v1->info;
-    int *id2 = (int *) v2->info;
-
-    return *id2 - *id1;
-}
-
-/* ----------------------------- */
-void imprimeAdjacencia(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("%d - " , *((int *)(v->info)));
-}
-
-/* ----------------------------- */
-void imprimeVertice(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("\nVertice %d - Adjacencias [", *((int *)v->info));
-
-    imprimirLista(v->listaAdjacencias, imprimeAdjacencia);
-    printf("]\n");
-}
-
-/* ----------------------------- */
-void imprimeVerticeSemAdjacencias(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("\nVertice %d - ", *((int *)v->info));
-}
-
-/* ---------------------------------------- */
-void* alocaInfoVertice(void *info){
-   pVertice pv = (pVertice) malloc(sizeof(Vertice));
-   pv->info = alocaInfoInt(((pVertice)info)->info);
-   return pv;
 }
 
 #endif /* UTILS_H */

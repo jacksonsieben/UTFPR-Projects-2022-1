@@ -2,8 +2,8 @@
 #define GRAFO_IMPL_H
 
 /* observe que o grafo utiliza a biblioteca Lista.h */
-#include "../Cap3/Lista.h"
-#include "../Cap4/Pilha.h"
+#include "../Fila e Pilha/Pilha.h"
+ #include "../Lista Linear/Lista.h"
 
 /* implementacao de grafo */
 #include "TAD_Grafo.h"

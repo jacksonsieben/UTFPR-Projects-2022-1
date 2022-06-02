@@ -26,7 +26,7 @@ pDPilha  copiarPilha    (pDPilha, FuncaoAlocacao);
 int      removeInfo     (pDPilha, void*, FuncaoComparacao);
 pDPilha  interseccao    (pDPilha, pDPilha, FuncaoComparacao);
 void     limpaPilha     (pDPilha, FuncaoLiberacao);
-int      iguais         (pDPilha, pDPilha, FuncaoComparacao);
+int      pilhasIguais         (pDPilha, pDPilha, FuncaoComparacao);
 
 
 #endif

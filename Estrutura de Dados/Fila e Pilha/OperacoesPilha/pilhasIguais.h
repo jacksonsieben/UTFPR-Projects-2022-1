@@ -1,4 +1,4 @@
-int iguais (pDPilha pDP1, pDPilha pDP2, FuncaoComparacao pfc){
+int pilhasIguais (pDPilha pDP1, pDPilha pDP2, FuncaoComparacao pfc){
     pNoh atual, pNL2;
 
     pNL2 = pDP2->pdLista->primeiro;

@@ -2,46 +2,7 @@
 #include <stdlib.h>
 
 #include "Grafo.h"
-#include "../Cap3/Utils.h"
-
-int comparaVertice(void *info1, void *info2){
-
-    pVertice v1 = (pVertice) info1;
-    pVertice v2 = (pVertice) info2;
-
-    int *id1 = (int *) v1->info;
-    int *id2 = (int *) v2->info;
-
-    return *id2 - *id1;
-}
-
-/* ----------------------------- */
-void imprimeAdjacencia(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("%d - " , *((int *)(v->info)));
-}
-
-/* ----------------------------- */
-void imprimeVertice(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("\nVertice %d - Adjacencias [", *((int *)v->info));
-
-    imprimirLista(v->listaAdjacencias, imprimeAdjacencia);
-    printf("]\n");
-}
-
-/* ----------------------------- */
-void imprimeVerticeSemAdjacencias(void *info1){
-    pVertice v = (pVertice) info1;
-    printf("\nVertice %d - ", *((int *)v->info));
-}
-
-/* ---------------------------------------- */
-void* alocaInfoVertice(void *info){
-   pVertice pv = (pVertice) malloc(sizeof(Vertice));
-   pv->info = alocaInfoInt(((pVertice)info)->info);
-   return pv;
-}
+#include "Utils.h"
 
 /* ----------------------------- */
 void main(){
@@ -91,7 +52,7 @@ void main(){
         case 1 :
 
             pv = (int *)malloc(sizeof(int));
-            printf ("ID do vértice : ");
+            printf ("ID do vertice : ");
             scanf("%d", pv);
             incluirVertice(grafo, pv, NULL);
 
@@ -101,9 +62,9 @@ void main(){
 
         case 2 :
 
-            printf ("\nID do vértice origem : ");
+            printf ("\nID do vertice origem : ");
             scanf("%d", &vOrigem);
-            printf ("\nID do vértice destino : ");
+            printf ("\nID do vertice destino : ");
             scanf("%d", &vDestino);
             incluirAresta(grafo, &vOrigem, &vDestino, NULL);
 
@@ -122,9 +83,9 @@ void main(){
             break;
 
         case 8 :
-            printf ("\nID do vértice origem : ");
+            printf ("\nID do vertice origem : ");
             scanf("%d", &vOrigem);
-            printf ("\nID do vértice destino : ");
+            printf ("\nID do vertice destino : ");
             scanf("%d", &vDestino);
 
             int result = existeCaminho(grafo, &vOrigem, &vDestino);
@@ -132,14 +93,14 @@ void main(){
             if (result != 0)
                 printf("Existe caminho!");
             else
-                printf("Não existe caminho!");
+                printf("Nao existe caminho!");
 
             getch();
             break;
         case 9 :
-            printf ("\nID do vértice origem : ");
+            printf ("\nID do vertice origem : ");
             scanf("%d", &vOrigem);
-            printf ("\nID do vértice destino : ");
+            printf ("\nID do vertice destino : ");
             scanf("%d", &vDestino);
 
             pDLista caminho = getCaminho(grafo, &vOrigem, &vDestino);
@@ -148,7 +109,7 @@ void main(){
                 imprimirLista(caminho, imprimeVerticeSemAdjacencias);
             }
             else
-                printf("\n *** NÃO existe um caminho. *** ");
+                printf("\n *** NAO existe um caminho. *** ");
 
             getch();
             break;

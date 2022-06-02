@@ -47,7 +47,7 @@ int        existeCaminho(pDGrafo, void *,  void *);
 pDLista    getCaminho   (pDGrafo, void *,  void *);
 
 int        existeCaminhoHamiltoniano (pDGrafo);
-int        existeCaminhoEuleriano    (pDGrafo); // pontes de Königsberg
+int        existeCaminhoEuleriano    (pDGrafo); // pontes de KÃ¶nigsberg
 
 int        ehSubGrafo(pDGrafo, pDGrafo);
 
