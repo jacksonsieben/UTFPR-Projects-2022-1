@@ -1,0 +1,90 @@
+1-
+create or replace view vi_livro_emprestado as
+select
+  liv_titulo as titulo,
+  emp_codigo as cod_emprestimo,
+  emp_data as data_emprestimo
+from
+  tb_livro,
+  tb_exemplar,
+  tb_exemplaremprestimo,
+  tb_emprestimo
+where
+  liv_codigo = exe_codlivro
+ and
+  exepre_codexemplar = exe_codigo
+ and
+  exepre_codemprestimo = emp_codigo
+and
+  upper(exe_status) = 'ALOCADO'
+_________________________________________________________________________________
+2-
+create or replace view vi_total_multa_emp as
+select
+  exepre_codemprestimo as cod_emprestimo,
+  sum(exepre_valormulta) as total_multa
+from
+  tb_exemplaremprestimo
+having
+  sum(exepre_valormulta) > 0
+group by
+  exepre_codemprestimo
+_________________________________________________________________________________
+3-
+create or replace view vi_reservas_func_data as
+select
+  res_codfunc as cod_funcionario,
+  count(*) as reservas_funcionario
+from
+  tb_reserva
+group by
+  res_codfunc, res_data
+_________________________________________________________________________________
+4-
+create or replace view vi_livro_especs as
+select
+  liv_titulo as titulo,
+  edi_nome as editora,
+  aut_nome as autor,
+  cat_descricao as categoria
+from
+  tb_livro,
+  tb_editora,
+  tb_autor,
+  tb_categoria,
+  tb_autorlivro
+where
+  liv_codeditora = edi_codigo
+  and
+  liv_codcategoria = cat_codigo
+  and
+  autliv_codautor = aut_codigo
+  and
+  autliv_codlivro = liv_codigo
+_________________________________________________________________________________
+5-
+create or replace view vi_livro_editora_endereco as
+select
+  liv_titulo as titulo,
+  edi_nome as editora,
+  end_descricao as endereco,
+  bai_descricao as bairro,
+  cid_descricao as cidade
+from
+  tb_livro,
+  tb_editora,
+  tb_endereco,
+  tb_bairro,
+  tb_cidade
+where
+  liv_codeditora = edi_codigo
+  and
+  edi_codendereco = end_codigo
+  and
+  edi_codcidade = cid_codigo
+  and
+  edi_codbairro = bai_codigo
+_________________________________________________________________________________
+6-
+
+
