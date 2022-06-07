@@ -29,7 +29,7 @@
 #include "Operacoes/10_getCaminho.h"
 #include "Operacoes/11_buscarVerticesIncidentes.h"
 
-/*
+/**
 #include "Operacoes/11_existeCaminhoHamiltoniano.h"
 #include "Operacoes/12_existeCaminhoEuleriano.h"
 #include "Operacoes/13_subGrafo.h"
