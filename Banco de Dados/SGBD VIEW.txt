@@ -1,5 +1,7 @@
 1-
-create or replace view vi_livro_emprestado as
+create or replace view 
+  vi_livro_emprestado 
+as
 select
   liv_titulo as titulo,
   emp_codigo as cod_emprestimo,
@@ -19,7 +21,9 @@ and
   upper(exe_status) = 'ALOCADO'
 _________________________________________________________________________________
 2-
-create or replace view vi_total_multa_emp as
+create or replace view 
+  vi_total_multa_emp 
+as
 select
   exepre_codemprestimo as cod_emprestimo,
   sum(exepre_valormulta) as total_multa
@@ -31,7 +35,9 @@ group by
   exepre_codemprestimo
 _________________________________________________________________________________
 3-
-create or replace view vi_reservas_func_data as
+create or replace view 
+  vi_reservas_func_data 
+as
 select
   res_codfunc as cod_funcionario,
   count(*) as reservas_funcionario
@@ -41,7 +47,9 @@ group by
   res_codfunc, res_data
 _________________________________________________________________________________
 4-
-create or replace view vi_livro_especs as
+create or replace view 
+  vi_livro_especs 
+as
 select
   liv_titulo as titulo,
   edi_nome as editora,
@@ -61,9 +69,13 @@ where
   autliv_codautor = aut_codigo
   and
   autliv_codlivro = liv_codigo
+  and
+  upper(autliv_principal) = 'SIM'
 _________________________________________________________________________________
 5-
-create or replace view vi_livro_editora_endereco as
+create or replace view 
+  vi_livro_editora_endereco 
+as
 select
   liv_titulo as titulo,
   edi_nome as editora,
@@ -86,5 +98,122 @@ where
   edi_codbairro = bai_codigo
 _________________________________________________________________________________
 6-
-
-
+create or replace view 
+  vi_salario_funcionario 
+as
+select
+  fun_nome as nome,
+  car_descricao as cargo,
+  car_salariobase as salario
+from
+  tb_funcionario,
+  tb_cargo
+where
+  fun_codcargo=car_codigo
+_________________________________________________________________________________
+7-
+create or replace view 
+  vi_multa_exemplar 
+as
+select
+  exepre_codexemplar as cod_exemplar,
+  sum(exepre_valormulta) as total_multa
+from
+  tb_exemplaremprestimo
+where
+  exepre_valormulta>0
+group by
+  exepre_codexemplar
+order by
+  exepre_codexemplar
+_________________________________________________________________________________
+8-
+create or replace view
+   vi_multa_livro
+as
+select
+   liv_titulo as titulo,
+   sum(exepre_valormulta) as total_multa
+from
+   tb_livro,
+   tb_exemplar,
+   tb_exemplaremprestimo
+where
+   liv_codigo=exe_codlivro
+   and
+   exe_codigo = exepre_codexemplar
+   and
+   exepre_valormulta>0
+group by
+   liv_titulo
+_________________________________________________________________________________
+9-
+create or replace view 
+	vi_endereco_cliente
+as
+select
+  cli_nome as nome,
+  end_descricao as endereco,
+  bai_descricao as bairro,
+  cid_descricao as cidade
+from
+  tb_cliente,
+  tb_endereco,
+  tb_bairro,
+  tb_cidade
+where
+  cli_codendereco = end_codigo
+  and
+  cli_codbairro = bai_codigo
+  and
+  cli_codcidade = cid_codigo
+_________________________________________________________________________________
+-- titulo do livro que foram emprestados e nunca tiveram reserva -- na aula
+11**-
+create or replace view
+	vi_livro_sem_reserva
+as
+select
+	liv_titulo
+from
+	tb_livro,
+	tb_exemplar,
+	tb_exemplaremprestimo
+where
+	liv_codigo = exe_codlivro
+	and
+	exepre_codexemplar = exe_codigo
+minus
+select
+	liv_titulo
+from
+	tb_livro,
+	tb_reserva
+where
+	res_codlivro = liv_codigo
+_________________________________________________________________________________
+11**-
+create or replace view
+	vi_livro_sem_reserva
+as
+select distinct
+	liv_titulo
+from
+	tb_livro,
+	tb_exemplar,
+	tb_exemplaremprestimo
+where
+	liv_codigo = exe_codlivro
+	and
+	exepre_codexemplar = exe_codigo
+	and
+	liv_titulo not in (
+				select distinct
+					liv_titulo
+				from
+					tb_livro,
+					tb_reserva
+				where
+					res_codlivro = liv_codigo
+			  )
+_________________________________________________________________________________
