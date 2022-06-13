@@ -9,7 +9,7 @@ void main(){
 
     int vertices[] = {1,2,3,4,5};
 
-    int opcao, vOrigem, vDestino;
+    int opcao, vOrigem, vDestino, vertice;
     int *pv;
 
     pDGrafo grafo = criarGrafoPlus(comparaVertice, imprimeVertice, alocaInfoVertice);
@@ -69,6 +69,15 @@ void main(){
             incluirAresta(grafo, &vOrigem, &vDestino, NULL);
 
             mostrarGrafo(grafo,NULL);
+            getch();
+            break;
+        case 3:
+            printf ("\nID do vertice : ");
+            scanf("%d", &vertice);
+
+            excluirVertice(grafo, &vertice, NULL);
+            
+            mostrarGrafo(grafo, NULL);
             getch();
             break;
 

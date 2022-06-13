@@ -2,8 +2,8 @@
 #define GRAFO_IMPL_H
 
 /* observe que o grafo utiliza a biblioteca Lista.h */
-#include "../Fila e Pilha/Pilha.h"
- #include "../Lista Linear/Lista.h"
+#include "../FilaPilha/Pilha.h"
+#include "../ListaLinear/Lista.h"
 
 /* implementacao de grafo */
 #include "TAD_Grafo.h"
@@ -20,10 +20,10 @@
 #include "Operacoes/4_mostrarGrafo.h"
 
 #include "Operacoes/5_excluirVertice.h" //? tarefa
-#include "Operacoes/6_excluirAresta.h"  //? tarefa
+//*#include "Operacoes/6_excluirAresta.h"  //? tarefa
 
 #include "Operacoes/7_buscaProfundidade.h"
-#include "Operacoes/8_buscaAmplitude.h" //? tarefa posso usar uma fila na mesma ideia de profundidade (quase isso)
+//*#include "Operacoes/8_buscaAmplitude.h" //? tarefa posso usar uma fila na mesma ideia de profundidade (quase isso)
 
 #include "Operacoes/9_existeCaminho.h"
 #include "Operacoes/10_getCaminho.h"

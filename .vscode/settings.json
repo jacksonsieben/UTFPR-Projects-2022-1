@@ -9,6 +9,10 @@
         "12_estritamentebinaria.h": "c",
         "13_espelho.h": "c",
         "grafo.h": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "4_conteminfo.h": "c",
+        "10_buscarinfopos.h": "c",
+        "10_getcaminho.h": "c",
+        "pilha.h": "c"
     }
 }
