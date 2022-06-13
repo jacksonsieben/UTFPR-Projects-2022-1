@@ -1,0 +1,155 @@
+1-
+select
+  cli_nome,
+  fun_nome
+from
+  tb_cliente,
+  tb_funcionario,
+  tb_emprestimo
+where
+  cli_codigo = emp_codcliente
+  and
+  fun_codigo = emp_codfuncionario
+intersect
+select
+  cli_nome,
+  fun_nome
+from
+  tb_cliente,
+  tb_funcionario,
+  tb_reserva
+where
+  cli_codigo = res_codcliente
+  and
+  fun_codigo = res_codfunc
+_________________________________________________________________________________
+2-
+select
+   cli_nome,
+   end_descricao,
+   cid_descricao
+from
+   tb_cliente,
+   tb_endereco,
+   tb_cidade
+where
+   cli_codendereco = end_codigo
+   and
+   cid_codigo = cli_codcidade
+intersect
+select
+   fun_nome,
+   end_descricao,
+   cid_descricao
+from
+   tb_funcionario,
+   tb_endereco,
+   tb_cidade
+where
+   fun_codendereco = end_codigo
+   and
+   cid_codigo = fun_codcidade
+_________________________________________________________________________________
+3-
+select
+  exe_codigo
+from
+  tb_exemplar
+intersect
+select
+  exepre_codexemplar
+from
+  tb_exemplaremprestimo,
+  tb_emprestimo
+where
+  exepre_codemprestimo = emp_codigo
+_________________________________________________________________________________
+4-
+ select
+    fun_nome
+ from
+    tb_funcionario,
+    tb_reserva
+ where
+    fun_codigo = res_codfunc
+ minus
+ select
+    fun_nome
+ from
+    tb_funcionario,
+    tb_emprestimo
+ where
+    fun_codigo = emp_codfuncionario
+_________________________________________________________________________________
+5-
+ select
+    fun_nome
+ from
+    tb_funcionario,
+    tb_reserva
+ where
+    fun_codigo = res_codfunc
+ union
+ select
+    fun_nome
+ from
+    tb_funcionario,
+    tb_emprestimo
+ where
+    fun_codigo = emp_codfuncionario
+_________________________________________________________________________________
+6-
+select
+   cli_nome,
+   end_descricao,
+   cid_descricao
+from
+   tb_cliente,
+   tb_endereco,
+   tb_cidade
+where
+   cli_codendereco = end_codigo
+   and
+   cid_codigo = cli_codcidade
+minus
+select
+   fun_nome,
+   end_descricao,
+   cid_descricao
+from
+   tb_funcionario,
+   tb_endereco,
+   tb_cidade
+where
+   fun_codendereco = end_codigo
+   and
+   cid_codigo = fun_codcidade
+_________________________________________________________________________________
+7-
+select
+	bai_descricao
+from
+	tb_bairro
+intersect
+select
+	bai_descricao
+from
+	tb_bairro,
+	tb_editora
+where
+	bai_codigo = edi_codbairro
+_________________________________________________________________________________
+8-
+select
+	bai_descricao
+from
+	tb_bairro
+intersect
+select
+	bai_descricao
+from
+	tb_bairro,
+	tb_cliente
+where
+	bai_codigo = cli_codbairro
+

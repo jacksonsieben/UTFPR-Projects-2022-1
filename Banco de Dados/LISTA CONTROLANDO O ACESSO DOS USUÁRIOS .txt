@@ -1,0 +1,26 @@
+1-
+ create user utfpr identified by utfpr
+_________________________________________________________________________________
+2-
+grant create session to utfpr
+_________________________________________________________________________________
+3-
+grant create session, create table to utfpr
+_________________________________________________________________________________
+4-
+create table tb_nada (nd_codigo int, nd_descricao varchar(2))
+_________________________________________________________________________________
+5-
+alter user utfpr identified by utfpr1
+_________________________________________________________________________________
+6-
+grant update (cli_codendereco) on jackson.tb_cliente to utfpr
+_________________________________________________________________________________
+7-
+create role aluno;
+grant create table, create sequence, drop table to utfpr;
+_________________________________________________________________________________
+8-
+grant aluno to utfpr;
+_________________________________________________________________________________
+9-SELECT * FROM DBA_ROLE_PRIVS;
