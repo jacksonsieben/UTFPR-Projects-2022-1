@@ -6,11 +6,11 @@
 pVertice buscarVertice(pDGrafo grafo, void *idVertice, FuncaoComparacao fc){
 
   if (fc == NULL)
-      fc = grafo->fc;
+    fc = grafo->fc;
 
   Vertice v;
-    v.info = idVertice;
-    return buscarNohInfo(grafo->listaVertices, &v, fc);
+  v.info = idVertice;
+  return buscarNohInfo(grafo->listaVertices, &v, fc);
 };
 
 #endif
