@@ -4,6 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+typedef struct infoAvalia InfoAvalia;
+typedef InfoAvalia* pInfoAvalia;
+
+struct infoAvalia {
+   char *tipo;
+   void *info;
+};
+
 /* ---------------------------------------- */
 /* tipo de dado INT */
 /* ---------------------------------------- */
@@ -64,6 +73,47 @@ struct Data* alocaData    (int dia, int mes, int ano){
    pd->mes = mes;
    pd->ano = ano;
    return pd;
+}
+
+int avaliaRecursiva (pNohArvore raiz){
+   pInfoAvalia infoAvalia;
+   int resultado;
+   if(raiz->direita == NULL && raiz->esquerda == NULL){
+      infoAvalia = raiz->info;
+
+      if(infoAvalia->tipo == 'OPERANDO'){
+         return (int) infoAvalia->info;
+      }
+   }
+   int direita = avaliaRecursiva(raiz->direita);
+   int esquerda = avaliaRecursiva(raiz->esquerda);
+   infoAvalia = raiz->info;
+   if(infoAvalia->tipo == 'OPERADOR'){
+      switch ((char) infoAvalia->info){
+         
+      case '*':
+         resultado = direita * esquerda;
+         break;
+
+      case '-':
+         resultado = direita - esquerda;
+         break;
+         
+      case '+':
+         resultado = direita + esquerda;
+         break;
+      default:
+         break;
+      }
+   }
+   char *operando = 'OPERANDO';
+   infoAvalia->tipo = operando;
+   infoAvalia->info = &resultado;
+   return resultado;
+}
+
+int avalia (pDArvore arvore){ 
+   return avaliaRecursiva (arvore->raiz);
 }
 
 #endif /* UTILS_H */

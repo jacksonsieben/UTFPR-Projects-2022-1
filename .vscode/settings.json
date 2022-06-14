@@ -13,6 +13,8 @@
         "4_conteminfo.h": "c",
         "10_buscarinfopos.h": "c",
         "10_getcaminho.h": "c",
-        "pilha.h": "c"
+        "pilha.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c"
     }
 }

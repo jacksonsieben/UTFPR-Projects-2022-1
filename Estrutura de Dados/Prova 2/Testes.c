@@ -1,4 +1,6 @@
 #include "Prova2.h"
+#include <stddef.h>
+#include <conio.h>
 
 int main(){
     int vertices[] = {1,2,3,4,5};
@@ -19,4 +21,9 @@ int main(){
 
     mostrarGrafo(grafo, NULL);
     getch();
-}
+
+    int vertice = 4;
+    int vDestino = 2;
+
+    excluirVertice(grafo, &vertice, comparaInt);
+    }

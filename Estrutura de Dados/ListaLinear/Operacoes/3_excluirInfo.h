@@ -12,6 +12,8 @@ int excluirInfo(pDLista pd, void *info, FuncaoComparacao pfc){
     while(atual != NULL){
        if (pfc(atual->info, info) == 0)
           break;
+
+            
        ant   = atual;
        atual = atual->prox;
     }

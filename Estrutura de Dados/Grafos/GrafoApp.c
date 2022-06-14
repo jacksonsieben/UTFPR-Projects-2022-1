@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 #include "Grafo.h"
 #include "Utils.h"
@@ -75,8 +76,19 @@ void main(){
             printf ("\nID do vertice : ");
             scanf("%d", &vertice);
 
-            excluirVertice(grafo, &vertice, NULL);
+            excluirVertice(grafo, &vertice, comparaInt);
             
+            mostrarGrafo(grafo, NULL);
+            getch();
+            break;
+        case 4:
+            printf ("\nID do vertice origem : ");
+            scanf("%d", &vOrigem);
+            printf ("\nID do vertice destino : ");
+            scanf("%d", &vDestino);
+
+            excluirAresta(grafo, &vOrigem, &vDestino, comparaInt);
+
             mostrarGrafo(grafo, NULL);
             getch();
             break;

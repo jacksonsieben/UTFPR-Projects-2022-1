@@ -6,15 +6,15 @@ pDLista getCaminhoRecursivo(pDGrafo grafo, pVertice vOrig, pVertice vDest, pDLis
 
    // encontrou o caminho se o vertice de destino coincidir com o de origem
    if (grafo->fc(vOrig, vDest)==0){
-       return caminhoParcial;
+      return caminhoParcial;
    }
 
-   // busca todos os vértices que levam a vDestino e
+   // busca todos os vï¿½rtices que levam a vDestino e
    // dispara uma chamada recursiva para cada um deles
    pDLista verticesIncidentes = buscarVerticesIncidentes(grafo, vDest, grafo->fc);
 
    if (verticesIncidentes->quantidade == 0)
-      // não é um caminho possível
+      // nï¿½o ï¿½ um caminho possï¿½vel
       return NULL;
 
    int cont = 1;
@@ -43,7 +43,7 @@ pDLista getCaminhoRecursivo(pDGrafo grafo, pVertice vOrig, pVertice vDest, pDLis
 /* --------------------------- */
 pDLista getCaminho(pDGrafo grafo, void *idOrig, void *idDest){
 
-   // busca os vértices para a origem e destino
+   // busca os vï¿½rtices para a origem e destino
    pVertice vOrigem  = buscarVertice(grafo, idOrig, grafo->fc);
    pVertice vDestino = buscarVertice(grafo, idDest, grafo->fc);
 

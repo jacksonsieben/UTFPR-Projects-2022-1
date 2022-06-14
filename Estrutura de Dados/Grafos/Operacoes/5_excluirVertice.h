@@ -1,17 +1,15 @@
 #ifndef EXCLUIR_VERTICE_H
 #define EXCLUIR_VERTICE_H
 
+#include <stddef.h>
+
 /* --------------------------- */
 void excluirVertice(pDGrafo grafo, void* info, FuncaoComparacao fc){
 
-    if (fc == NULL)
+    if(fc == NULL)
        fc = grafo->fc;
 
-    pVertice v = buscarVertice(grafo, info, fc);
-
-    if(v == NULL){
-        return NULL;
-    }
+    pVertice v = buscarVertice(grafo, info, NULL);
 
     pNoh atual = v->listaAdjacencias->primeiro;
     
@@ -19,8 +17,11 @@ void excluirVertice(pDGrafo grafo, void* info, FuncaoComparacao fc){
         pVertice vAtual = (pVertice) atual->info;
         pNoh atualAdjacente = vAtual->listaAdjacencias->primeiro;
         while(atualAdjacente != NULL){
-            if(fc(atualAdjacente->info, atual->info) == 0){
-                excluirInfo(vAtual->listaAdjacencias, atualAdjacente->info, fc);
+            if(grafo->fc(atualAdjacente->info, atual->info) == 0){//sem grafo->fc comparando vertice com funcao de inteiros
+                printf("aq2");
+                pVertice vAdjacente = (pVertice) atualAdjacente->info;
+                excluirInfo(vAtual->listaAdjacencias, atualAdjacente, grafo->fc);
+                //printf("sadsd %d",  vAtual->listaAdjacencias->quantidade);
             }
             atualAdjacente = atualAdjacente->prox;
         }
