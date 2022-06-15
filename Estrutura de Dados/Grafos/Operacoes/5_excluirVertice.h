@@ -11,17 +11,19 @@ void excluirVertice(pDGrafo grafo, void* info, FuncaoComparacao fc){
 
     pVertice v = buscarVertice(grafo, info, NULL);
 
-    pNoh atual = v->listaAdjacencias->primeiro;
+    pNoh vertice = (pNoh) v;
+
+    pNoh atual = grafo->listaVertices->primeiro;
     
     while(atual != NULL){
         pVertice vAtual = (pVertice) atual->info;
         pNoh atualAdjacente = vAtual->listaAdjacencias->primeiro;
         while(atualAdjacente != NULL){
-            if(grafo->fc(atualAdjacente->info, atual->info) == 0){//sem grafo->fc comparando vertice com funcao de inteiros
-                printf("aq2");
+            
+            if(grafo->fc(atualAdjacente->info, v) == 0){
                 pVertice vAdjacente = (pVertice) atualAdjacente->info;
-                excluirInfo(vAtual->listaAdjacencias, atualAdjacente, grafo->fc);
-                //printf("sadsd %d",  vAtual->listaAdjacencias->quantidade);
+                excluirInfo(vAtual->listaAdjacencias, atualAdjacente->info, grafo->fc);
+                break;
             }
             atualAdjacente = atualAdjacente->prox;
         }

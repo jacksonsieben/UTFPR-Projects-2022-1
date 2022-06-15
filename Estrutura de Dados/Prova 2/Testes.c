@@ -26,4 +26,7 @@ int main(){
     int vDestino = 2;
 
     excluirVertice(grafo, &vertice, comparaInt);
-    }
+
+    mostrarGrafo(grafo, NULL);
+    getch();
+}
