@@ -15,6 +15,7 @@
         "10_getcaminho.h": "c",
         "pilha.h": "c",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "7_buscaprofundidade.h": "c"
     }
 }
