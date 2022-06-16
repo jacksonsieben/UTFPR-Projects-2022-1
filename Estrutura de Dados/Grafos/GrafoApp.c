@@ -8,7 +8,8 @@
 /* ----------------------------- */
 void main(){
 
-    int vertices[] = {1,2,3,4,5};
+    //int vertices[] = {1,2,3,4,5};
+    int vertices[] = {0,1,2,3,4,5,6};
 
     int opcao, vOrigem, vDestino, vertice;
     int *pv;
@@ -45,6 +46,23 @@ void main(){
             incluirAresta(grafo, &vertices[2], &vertices[4], NULL);
             incluirAresta(grafo, &vertices[3], &vertices[4], NULL);
             incluirAresta(grafo, &vertices[4], &vertices[1], NULL);
+
+            //TODO exemplo diferente de grafo
+            /*incluirVertice(grafo, &vertices[0], NULL);
+            incluirVertice(grafo, &vertices[1], NULL);
+            incluirVertice(grafo, &vertices[2], NULL);
+            incluirVertice(grafo, &vertices[3], NULL);
+            incluirVertice(grafo, &vertices[4], NULL);
+            incluirVertice(grafo, &vertices[5], NULL);
+            incluirVertice(grafo, &vertices[6], NULL);
+
+            incluirAresta(grafo, &vertices[0], &vertices[1], NULL);
+            incluirAresta(grafo, &vertices[0], &vertices[2], NULL);
+            incluirAresta(grafo, &vertices[0], &vertices[3], NULL);
+            incluirAresta(grafo, &vertices[0], &vertices[4], NULL);
+            incluirAresta(grafo, &vertices[3], &vertices[5], NULL);
+            incluirAresta(grafo, &vertices[1], &vertices[6], NULL);*/
+
 
             mostrarGrafo(grafo, NULL);
             getch();
@@ -100,6 +118,11 @@ void main(){
 
         case 6 :
             buscaEmProfundidade(grafo, NULL, imprimeVerticeSemAdjacencias);
+            getch();
+            break;
+        case 7:
+            buscaAmplitude(grafo, NULL, imprimeVerticeSemAdjacencias);
+
             getch();
             break;
 

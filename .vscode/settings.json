@@ -16,6 +16,9 @@
         "pilha.h": "c",
         "stdio.h": "c",
         "stdlib.h": "c",
-        "7_buscaprofundidade.h": "c"
+        "7_buscaprofundidade.h": "c",
+        "8_buscaamplitude.h": "c",
+        "0_structs.h": "c",
+        "tad_fila.h": "c"
     }
 }

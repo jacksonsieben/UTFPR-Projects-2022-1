@@ -5,6 +5,7 @@
 
 /* observe que o grafo utiliza a biblioteca Lista.h */
 #include "../FilaPilha/Pilha.h"
+#include "../FilaPilha/Fila.h"
 #include "../ListaLinear/Lista.h"
 
 /* implementacao de grafo */
@@ -21,11 +22,11 @@
 
 #include "Operacoes/4_mostrarGrafo.h"
 
-#include "Operacoes/5_excluirVertice.h" //TODO: erro na hora do free na lista dde adjacencia
-#include "Operacoes/6_excluirAresta.h"  //? tarefa
+#include "Operacoes/5_excluirVertice.h" 
+#include "Operacoes/6_excluirAresta.h"  
 
 #include "Operacoes/7_buscaProfundidade.h"
-//*#include "Operacoes/8_buscaAmplitude.h" //? tarefa posso usar uma fila na mesma ideia de profundidade (quase isso)
+#include "Operacoes/8_buscaAmplitude.h" //? tarefa posso usar uma fila na mesma ideia de profundidade (quase isso)
 
 #include "Operacoes/9_existeCaminho.h"
 #include "Operacoes/10_getCaminho.h"
