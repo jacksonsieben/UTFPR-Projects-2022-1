@@ -14,12 +14,11 @@ int main(){
     incluirVertice(grafo, &vertices[4], NULL);
     incluirAresta(grafo, &vertices[0], &vertices[1], NULL);
     incluirAresta(grafo, &vertices[1], &vertices[3], NULL);
-    //incluirAresta(grafo, &vertices[2], &vertices[3], NULL);
+    incluirAresta(grafo, &vertices[2], &vertices[3], NULL);
     incluirAresta(grafo, &vertices[2], &vertices[4], NULL);
     incluirAresta(grafo, &vertices[3], &vertices[4], NULL);
     incluirAresta(grafo, &vertices[4], &vertices[1], NULL);
 
     mostrarGrafo(grafo, NULL);
     getch();
-
 }

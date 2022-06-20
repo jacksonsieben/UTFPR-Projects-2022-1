@@ -6,7 +6,7 @@ int regular (pDGrafo grafo){
     int flag = 0;
     while(atual != NULL){
         pVertice vAtual = (pVertice) atual;
-        if(vAtual->grau != vertice->grau){
+        if(vAtual->grau != vertice->grau){//grau = listaAdjacencias->quantidade
             flag = 1;
             break;
         }
