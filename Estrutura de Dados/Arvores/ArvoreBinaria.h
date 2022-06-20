@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #include "ListaLinear/Lista.h"
+//*#include "../ListaLinear/Lista.h"
 
 #include "TAD_Arvore.h"
 
