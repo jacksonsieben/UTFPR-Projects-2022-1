@@ -47,7 +47,7 @@ void        amplitude           (pDArvore, FuncaoImpressao);
 int         comprimentoInterno  (pDArvore);
 int         balanceada          (pDArvore);
 int         isBST               (pDArvore, void*, void*, FuncaoComparacao);
-int         avalia              (pDArvore);//! nao iniciado
+int         avalia              (pDArvore);
 
 #endif
 

@@ -19,6 +19,7 @@
         "7_buscaprofundidade.h": "c",
         "8_buscaamplitude.h": "c",
         "0_structs.h": "c",
-        "tad_fila.h": "c"
+        "tad_fila.h": "c",
+        "tad_grafo.h": "c"
     }
 }

@@ -23,3 +23,5 @@
 #include "Operacoes/9_buscarNohInfo.h"
 
 #include "Operacoes/10_buscarInfoPos.h"
+
+#include "Operacoes/13_contidaNaLista.h"

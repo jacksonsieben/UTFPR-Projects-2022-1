@@ -15,9 +15,9 @@ int balanceadaRecursiva (pNohArvore raiz){
 int balanceada (pDArvore arvore){
     int diferenca = balanceadaRecursiva(arvore->raiz->direita) - balanceadaRecursiva(arvore->raiz->esquerda);
     switch (diferenca){
-    case  0: return 0; break;
-    case  1: return 0; break;
-    case -1: return 0; break;
-    default: return 1; break;
+        case  0: return 0; break;
+        case  1: return 0; break;
+        case -1: return 0; break;
+        default: return 1; break;
     }
 }
