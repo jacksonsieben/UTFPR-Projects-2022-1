@@ -2,6 +2,7 @@
 #define GRAFO_IMPL_H
 
 #include <stddef.h>
+#include <stdio.h>
 
 /* observe que o grafo utiliza a biblioteca Lista.h */
 #include "../FilaPilha/Pilha.h"
