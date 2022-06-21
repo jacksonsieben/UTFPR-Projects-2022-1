@@ -59,7 +59,7 @@ pNohArvore excluirInfoRecursivo(pNohArvore raiz, void *info, FuncaoComparacao fc
 }
 
 /* ----------------------------------------------------------*/
-int excluirInfo(pDArvore arvore, void *info, FuncaoComparacao pfc){
+int excluirInfoArv(pDArvore arvore, void *info, FuncaoComparacao pfc){
 
    arvore->raiz = excluirInfoRecursivo(arvore->raiz, info, pfc);
    /* estah assumindo que sempre excluira */

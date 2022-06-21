@@ -6,7 +6,7 @@ void amplitude (pDArvore arvore, FuncaoImpressao pfi){
     pNohArvore raiz = malloc(sizeof(pNohArvore));
 
     raiz = arvore->raiz;
-    incluirInfoLista(lista, raiz);
+    incluirInfo(lista, raiz);
     while(lista->quantidade != 0){
         pAux = lista->primeiro;
         int quantidade = lista->quantidade;
@@ -14,10 +14,10 @@ void amplitude (pDArvore arvore, FuncaoImpressao pfi){
             raiz = pAux->info;
             if(raiz != NULL){
                 if(raiz->esquerda != NULL){
-                    incluirInfoLista(lista, raiz->esquerda);
+                    incluirInfo(lista, raiz->esquerda);
                 }
                 if(raiz->direita != NULL){
-                    incluirInfoLista(lista, raiz->direita);
+                    incluirInfo(lista, raiz->direita);
                 }
             }
             pAux = pAux->prox;

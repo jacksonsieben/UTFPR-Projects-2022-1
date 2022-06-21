@@ -1,16 +1,17 @@
 #include <stdio.h>
-#include "Utils.h"
+
 #include "ArvoreBinaria.h"
+#include "Utils.h"
 
 int main(){
     /*pDArvore pArvoreInt = criarArvore(2);
 
     /* teste de inclusao */
-    /*incluirInfo(pArvoreInt, alocaInt(5), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(3), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(9), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(1), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(2), comparaInt);
+    /*incluirInfoArv(pArvoreInt, alocaInt(5), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(3), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(9), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(1), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(2), comparaInt);
 
     emOrdem(pArvoreInt->raiz, imprimeInt);
     printf("\n");
@@ -20,7 +21,7 @@ int main(){
     posOrdem(pArvoreInt->raiz, imprimeInt);
 */
     /* teste de exclusao */
-    /*int res = excluirInfo(pArvoreInt, alocaInt(3), comparaInt);
+    /*int res = excluirInfoArv(pArvoreInt, alocaInt(3), comparaInt);
     printf("\nExcluiu? = %d \n", res);
 
     emOrdem(pArvoreInt->raiz, imprimeInt);
@@ -32,11 +33,11 @@ int main(){
     pDArvore pArvoreInt = criarArvore(2);
 
     /* teste de inclusao */
-    incluirInfo(pArvoreInt, alocaInt(5), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(3), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(9), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(1), comparaInt);
-    incluirInfo(pArvoreInt, alocaInt(2), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(5), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(3), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(9), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(1), comparaInt);
+    incluirInfoArv(pArvoreInt, alocaInt(2), comparaInt);
 
     printf("Arvore 1\n");
     emOrdem(pArvoreInt->raiz, imprimeInt);
@@ -45,11 +46,11 @@ int main(){
     pDArvore pArvoreInt2 = criarArvore(2);
 
     /* teste de inclusao 2 */
-    incluirInfo(pArvoreInt2, alocaInt(5), comparaInt);
-    incluirInfo(pArvoreInt2, alocaInt(3), comparaInt);
-    incluirInfo(pArvoreInt2, alocaInt(9), comparaInt);
-    incluirInfo(pArvoreInt2, alocaInt(1), comparaInt);
-    incluirInfo(pArvoreInt2, alocaInt(2), comparaInt);
+    incluirInfoArv(pArvoreInt2, alocaInt(5), comparaInt);
+    incluirInfoArv(pArvoreInt2, alocaInt(3), comparaInt);
+    incluirInfoArv(pArvoreInt2, alocaInt(9), comparaInt);
+    incluirInfoArv(pArvoreInt2, alocaInt(1), comparaInt);
+    incluirInfoArv(pArvoreInt2, alocaInt(2), comparaInt);
 
     printf("Arvore 2\n");
     emOrdem(pArvoreInt2->raiz, imprimeInt);

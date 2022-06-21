@@ -3,8 +3,7 @@
 
 #include <stdlib.h>
 
-#include "ListaLinear/Lista.h"
-//*#include "../ListaLinear/Lista.h"
+#include "../Listas Lineares/Lista.h"
 
 #include "TAD_Arvore.h"
 
