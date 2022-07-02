@@ -2,7 +2,7 @@
 #define ARVORE_NARIA_H
 
 /* observe que a arvore n-aria utiliza a biblioteca Lista.h */
-#include "ListaLinear/Lista.h"
+#include "../Listas Lineares/Lista.h"
 
 /* implementacao de uma �rvore n-�ria de busca */
 #include "TAD_Arvore.h"

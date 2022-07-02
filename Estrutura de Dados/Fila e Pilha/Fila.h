@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#include "ListaLinear/Lista.h"
+#include "../Listas Lineares/Lista.h"
 
 #include "TAD_Fila.h"
 
@@ -25,6 +25,5 @@
 
 #include "OperacoesFila/7_trocaFila.h"
 
-#include "OperacoesFila/NGE.h"
 
 #endif // FILA_H

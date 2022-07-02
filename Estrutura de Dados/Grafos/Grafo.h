@@ -5,9 +5,9 @@
 #include <stdio.h>
 
 /* observe que o grafo utiliza a biblioteca Lista.h */
-#include "../FilaPilha/Pilha.h"
-#include "../FilaPilha/Fila.h"
-#include "../ListaLinear/Lista.h"
+#include "../Fila e Pilha/Pilha.h"
+#include "../Fila e Pilha/Fila.h"
+#include "../Listas Lineares/Lista.h"
 
 /* implementacao de grafo */
 #include "TAD_Grafo.h"

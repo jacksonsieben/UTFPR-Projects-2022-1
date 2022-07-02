@@ -20,8 +20,8 @@ typedef void (*FuncaoImpressao) (void*);
 /*------------------------------------------*/
 pDArvore   criarArvore(int);
 
-void        incluirInfo         (pDArvore, void *, FuncaoComparacao);
-int         excluirInfo         (pDArvore, void *, FuncaoComparacao);
+void        incluirInfoArv         (pDArvore, void *, FuncaoComparacao);
+int         excluirInfoArv         (pDArvore, void *, FuncaoComparacao);
 pNohArvore  buscarInfo          (pDArvore, void *, FuncaoComparacao);
 int         quantidadeNohs      (pDArvore);
 

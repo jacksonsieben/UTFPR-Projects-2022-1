@@ -24,7 +24,7 @@ pNohArvore incluirInfoRecursivo(pNohArvore raiz, void *info, FuncaoComparacao pf
 }
 
 /* ----------------------------------------------------------*/
-void incluirInfo(pDArvore arvore, void *info, FuncaoComparacao pfc){
+void incluirInfoArv(pDArvore arvore, void *info, FuncaoComparacao pfc){
 
    arvore->raiz = incluirInfoRecursivo(arvore->raiz, info, pfc);
    arvore->quantidadeNohs++;

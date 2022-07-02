@@ -1,7 +1,7 @@
 #ifndef PILHA_H
 #define PILHA_H
 
-#include "ListaLinear/Lista.h"
+#include "../Listas Lineares/Lista.h"
 
 #include "TAD_Pilha.h"
 
@@ -24,7 +24,5 @@
 #include "OperacoesPilha/8_interseccaoPilha.h"
 
 #include "OperacoesPilha/9_limpaPilha.h"
-
-#include "OperacoesPilha/pilhasIguais.h"
 
 #endif
