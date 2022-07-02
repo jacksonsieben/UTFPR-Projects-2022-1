@@ -1,0 +1,39 @@
+declare
+  cursor cur_multa is
+  select
+    cli_nome,
+    cli_codcidade,
+    cli_codbairro,
+    sum(exepre_valormulta) as multa
+  from
+    tb_cliente,
+    tb_emprestimo,
+    tb_exemplaremprestimo
+  where
+     cli_codigo = emp_codcliente
+     and
+     emp_codigo = exepre_codemprestimo
+     and
+     exepre_valormulta > 0
+  group by
+     cli_nome,
+     cli_codcidade,
+     cli_codbairro
+  order by
+     cli_nome;
+  total_multa tb_exemplaremprestimo.exepre_valormulta%TYPE;
+  wCidade tb_cidade.cid_descricao%type;
+  wBairro tb_bairro.bai_descricao%type;
+begin
+  total_multa := 0;
+  for reg_multa in cur_multa
+	loop
+		select cid_descricao into wCidade from tb_cidade where cid_codigo = reg_multa.cli_codcidade;
+		select bai_descricao into wBairro from tb_bairro where bai_codigo = reg_multa.cli_codbairro;
+		dbms_output.put_line(reg_multa.cli_nome || ' deve R$' || reg_multa.multa);
+		dbms_output.put_line('Reside em ' || wBairro || ' ' || wCidade);
+		total_multa := total_multa + reg_multa.multa;
+	end loop;
+  dbms_output.put_line('Total de Multas R$' || total_multa);
+end;
+/

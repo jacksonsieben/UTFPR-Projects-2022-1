@@ -1,0 +1,66 @@
+create or replace trigger trg_bloqueio_vendas
+	before insert or update or delete on tb_venda
+for each row
+begin
+	if to_char(sysdate,'DY') in ('SEX','SÁB') then
+		raise_application_error(-20200, 'dia não permitido');
+	end if;
+end;
+______________________________________________________________________________
+
+create or replace trigger trg_bloqueio_vendas
+	before insert or update or delete on tb_venda
+for each row
+begin
+	if inserting or updating then
+		if to_char(:new.ven_data,'DY') in ('SEX','SÁB') then
+			raise_application_error(-20200, 'dia não permitido');
+		end if;
+	else
+		if to_char(:old.ven_data,'DY') in ('SEX','SÁB') then
+			raise_application_error(-20200, 'dia não permitido');
+		end if;
+	end if;
+end;
+______________________________________________________________________________
+create or replace trigger trg_atualiza_estoque
+	after insert or update or delete on tb_itemvenda
+for each row
+declare
+	wEstoque tb_produto.pro_quantidade%type;
+	wProduto tb_produto.pro_codigo%type;
+begin
+	if deleting then
+		wProduto := :old.itv_codproduto;
+	else
+		wProduto := :new.itv_codproduto;
+	end if;
+		select pro_quantidade into wEstoque from tb_produto where pro_codigo = wProduto;
+	if inserting then
+		wEstoque := wEstoque - :new.itv_quantidade;
+	elsif updating then
+		wEstoque := wEstoque + :old.itv_quantidade - :new.itv_quantidade;
+	else
+		wEstoque:= wEstoque + :old.itv_quantidade;
+	end if;
+	update tb_produto set pro_quantidade = wEstoque where pro_codigo = wProduto;
+exception
+	when others then
+		raise_application_error(-20200,'Ocorreu um erro.');
+end;
+_________________________________________________________________________________________________
+create or replace trigger trg_log_endereco
+	after update or delete on tb_endereco
+for each row
+declare
+	wOperacao tb_log_endereco.operacao%type;
+begin
+	if updating then
+		wOperacao := 'Alterou';
+	else
+		wOperacao := 'Deletou';
+	end if;
+	insert into tb_log_endereco(end_codigo, end_descricao, usuario, data_hora, operacao)
+			values(:old.end_codigo, :old.end_descricao, user, sysdate, wOperacao);
+end;
+__________________________________________________________________________________________________

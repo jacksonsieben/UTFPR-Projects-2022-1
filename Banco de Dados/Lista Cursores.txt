@@ -1,0 +1,65 @@
+declare
+	cursor cursor_salario is
+	select car_salariobase, fun_nome
+	from tb_cargo, tb_funcionario
+	where fun_codcargo = car_codigo
+	order by fun_nome;
+	f_nome tb_funcionario.fun_nome%type;
+	f_salario tb_cargo.car_salariobase%type;
+begin
+	open cursor_salario;
+	loop
+		fetch cursor_salario into f_salario, f_nome;
+		exit when cursor_salario%notfound;
+		dbms_output.put_line(f_nome || ' | R$' || f_salario);
+	end loop;
+	close cursor_salario;
+end; 
+_________________________________________________________________________________
+declare
+	cursor cursor_cliente is
+	select cli_nome
+	from tb_cliente, tb_emprestimo
+	where emp_codcliente = cli_codigo
+	and to_char(emp_data, 'YYYY') = '2003';
+	c_nome tb_cliente.cli_nome%type;
+begin
+	open cursor_cliente;
+	loop
+		fetch cursor_cliente into c_nome;
+     		exit when cursor_cliente%notfound;
+     		dbms_output.put_line(c_nome);
+  	end loop;
+	close cursor_cliente;
+end;
+
+_________________________________________________________________________________
+declare
+	cursor cursor_cliente is
+	select cli_codigo, cli_nome, emp_data
+	from tb_cliente, tb_emprestimo
+	where emp_codcliente = cli_codigo
+	and to_char(emp_data, 'YYYY') = '2003';
+	c_nome cursor_cliente%rowtype;
+begin
+	open cursor_cliente;
+	loop
+		fetch cursor_cliente into c_nome;
+     		exit when cursor_cliente%notfound;
+     		dbms_output.put_line(c_nome.cli_nome || ' ' || c_nome.emp_data);
+  	end loop;
+	close cursor_cliente;
+end;
+_________________________________________________________________________________
+declare
+	cursor cursor_cliente is
+	select cli_codigo, cli_nome, emp_data
+	from tb_cliente, tb_emprestimo
+	where emp_codcliente = cli_codigo
+	and to_char(emp_data, 'YYYY') = '2003';
+begin
+	for reg_cliente in cursor_cliente loop
+     		dbms_output.put_line(reg_cliente.cli_nome || ' ' || reg_cliente.emp_data);
+  	end loop;
+end;
+_________________________________________________________________________________
